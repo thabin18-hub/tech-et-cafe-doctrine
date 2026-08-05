@@ -1,0 +1,80 @@
+PROMPT #1: AUDIT NICHE ET POSITIONNEMENT
+==========================================
+
+Agis en tant que stratège de croissance YouTube expert et analyste de données.
+
+CONTEXTE:
+La chaîne Tech & Café produit des Shorts (30-60s) et long-format sur l'actualité IA/Tech/Fondateurs.
+
+ANALYSE REQUISE:
+
+1. Les 5 sous-niches les plus rentables (CPM/RPM élevé) dans IA/Tech:
+   - Format court (Shorts 30-60s)
+   - Audience: décideurs tech, entrepreneurs, devs, étudiants IA
+
+2. Identifie les angles morts que les TOP creators (MrBeast, Vsauce, TED-Ed style) n'exploitent PAS:
+   - Quels sujets IA/Tech sont sur-traités? (Crypto, ChatGPT basics)
+   - Quels angles sont vierges? (AI safety, founding stories, regulatory, agent behavior)
+
+3. Propose 3 concepts de chaîne uniques avec positionnement premium:
+   Pour chacun: Nom + Tagline + Style narratif + Promesse spectateur + Barrière à l'entrée
+
+4. Profil type audience:
+   - Âge, profession, revenus
+   - Douleurs/objectifs primaires
+   - Où ils consomment le contenu? (YouTube, Reddit, Product Hunt, HN, Twitter)
+   - Quoi les fait s'abonner? (What hooks them?)
+   - Disposent-ils à cliquer sur affiliations/sponsors?
+
+FORMAT OUTPUT:
+
+```json
+{
+  "sous_niches": [
+    {
+      "rank": 1,
+      "name": "Niche name",
+      "cpm_range": "2.1-2.8",
+      "audience_type": "Description",
+      "content_pillars": ["Pillar 1", "Pillar 2"],
+      "opportunity_score": "9/10",
+      "why_high_cpm": "Reason"
+    }
+  ],
+  "angles_morts": [
+    {
+      "angle": "Angle name",
+      "why_nobody_does_it": "Reason",
+      "your_unique_angle": "How you'd do it differently",
+      "estimated_cpm": "2.3",
+      "difficulty": "Medium"
+    }
+  ],
+  "concepts": [
+    {
+      "concept_number": 1,
+      "name": "Channel name",
+      "tagline": "One-liner",
+      "narrative_style": "Description of how you'd narrate",
+      "viewer_promise": "What viewers get from subscribing",
+      "barrier_to_entry": "What makes this hard to replicate",
+      "target_audience": "Who exactly"
+    }
+  ],
+  "audience_profile": {
+    "age_range": "25-45",
+    "professions": ["Founder", "Dev", "Product Manager"],
+    "annual_income": "80k-200k+",
+    "primary_pain": "Description",
+    "consumption_channels": ["YouTube", "Reddit", "HN"],
+    "subscription_triggers": ["X", "Y", "Z"],
+    "affiliate_likelihood": "High/Medium/Low"
+  }
+}
+```
+
+RÈGLES STRICTES:
+- Base toutes recommandations sur DATA (CPM historique, audience size, trending topics)
+- Pas d'intuition pure
+- Soit spécifique (pas "do better content")
+- Angles morts = vraiment vierges ou peu exploités (vérifier rapidement)

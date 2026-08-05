@@ -1,0 +1,80 @@
+# Directives Production - Semaine du 03/08/2026
+# Générées manuellement le 03/08 (Claude) en attendant que la routine
+# "Reunion strategique hebdomadaire" tourne avec succes (pas encore fiable,
+# cf. rapport hebdo du 02/08 qui a echoue silencieusement)
+# Basees sur DONNEES REELLES (Data API YouTube, pas le template exemple du 01/08)
+# Lues par les routines de production shorts (7h/10h GMT) et video longue (18h GMT)
+
+semaine_du: "2026-08-03"
+
+# === DATA SEMAINE PRECEDENTE (reelles, verifiees manuellement le 03/08) ===
+data_semaine_precedente:
+  period: "27/07 - 02/08"
+  videos_publiees: 16
+  videos_publiques: 10
+  videos_privees_en_attente: 6
+  vues_totales_data_api: 2598
+  vues_totales_analytics_partiel: 188
+  note_ecart: "Analytics a un delai de traitement de 24-72h pour un canal aussi jeune, la Data API (compteurs par video) est plus fiable a chaud"
+  retention_moyenne: "53.1%"
+  abonnes_actuels: 7
+  likes_total: 24
+  progression_monetisation: "7/1000 abos (0.7%)"
+  echantillon_note: "Seulement 7 videos publiques ont une traction mesurable (vues > 5). Echantillon encore tres petit, les patterns ci-dessous sont des hypotheses a confirmer, pas des certitudes."
+
+# === CE QUI MARCHE (top 3, par vues) ===
+continuer:
+  - "Nommer un acteur IA majeur connu (Anthropic, OpenAI, Google) explicitement dans le titre: 'Anthropic sort Claude Opus 5' (971 vues), 'OpenAI lance 3 IA' (438 vues) vs sujets sans nom d'acteur familier (0-23 vues)"
+  - "Chiffre concret et comparatif dans le titre/hook: 'moitie prix', '3 IA differentes', '10 millions de personnes' - plus parlant qu'une description thematique abstraite"
+  - "Duree 48-55s: pas de signal contraire, retention 53.1% deja solide, ne pas changer sans raison"
+
+# === CE QUI NE MARCHE PAS (a eviter, a confirmer sur plus de data) ===
+arreter:
+  - "Sujets institutionnels/financiers abstraits sans nom d'acteur explicite ni chiffre parlant pour le grand public: contrat gouvernemental (Pentagone/Oracle, 1 vue), changement de poste d'un chercheur (Nobel quitte DeepMind, 0 vue), levee de fonds sans contexte produit (OpenAI leve 110 milliards, 0 vue malgre 'OpenAI' dans le titre - le chiffre seul ne suffit pas, il faut aussi un impact concret pour le spectateur)"
+  - "Note: 'OpenAI leve 110 milliards' contredit en partie l'hypothese acteur+chiffre => le facteur commun des videos qui marchent n'est peut-etre pas juste 'nom+chiffre' mais 'nom+chiffre+benefice/impact concret pour l'utilisateur'. A tester specifiquement cette semaine (voir tests_a_mener)."
+
+# === PARAMETRES PRODUCTION ===
+angles_privilegier:
+  - "IA agents autonomes"
+  - "Actualites des grands labs IA (Anthropic, OpenAI, Google DeepMind) avec angle 'ce que ca change pour toi' plutot que purement factuel/financier"
+  - "Comparatifs et chiffres chocs (prix, performance, adoption) rattaches a un benefice concret pour le spectateur"
+
+angles_eviter:
+  - "Crypto/blockchain"
+  - "Memes tech"
+  - "Actualite purement financiere/contractuelle sans impact utilisateur explicite (voir 'arreter' ci-dessus)"
+
+duree_cible: "48-55s"
+hook_strategy: "nommer l'acteur IA majeur des les 3 premieres secondes + chiffre concret + benefice/impact pour le spectateur (pas juste le chiffre seul)"
+retention_target: "53% (maintenir le niveau actuel, ne pas sacrifier pour plus de volume)"
+
+affiliation_priority:
+  - "tech books & courses"
+  - "AI tools freemium"
+
+cpm_target: "1.8"
+
+# === TESTS A MENER CETTE SEMAINE ===
+tests_a_mener:
+  - "Hypothese: un titre avec acteur IA nomme + chiffre concret + benefice utilisateur explicite genere plus de vues qu'un titre avec acteur+chiffre seul (sans benefice). Objectif: departager les deux facteurs (nom+chiffre vs nom+chiffre+benefice) qui semblent confondus dans la data actuelle. Mesure de reussite: comparer vues 24h/48h entre videos des deux categories sur les 5 prochaines productions."
+
+notes: |
+  Semaine 27/07-02/08: 16 videos produites, 2598 vues reelles (compteur video),
+  7 abonnes, retention 53.1% (bon signal). Echantillon encore petit (7 videos
+  avec traction mesurable) - ces directives sont des hypotheses de travail,
+  pas des regles figees. A reevaluer avec plus de donnees la semaine prochaine
+  via la routine "Reunion strategique hebdomadaire" (a verifier qu'elle
+  fonctionne, echec du rapport hebdo du 02/08 non explique).
+
+  6 videos du backlog restent privees en attente de validation manuelle
+  (robots/cybersecurite) - watch time et vues potentielles non exploitees
+  tant qu'elles ne sont pas publiees.
+
+# === METADATA ===
+metadata:
+  version: "2.0"
+  generated_at: "2026-08-03T08:35:00Z"
+  generated_by: "Claude (manuel, en attendant fiabilite de la routine automatique)"
+  algorithm: "analyse manuelle donnees reelles Data API + Analytics"
+  manual_override: true
+  next_update: "2026-08-10 (ou avant si la routine hebdo est corrigee)"

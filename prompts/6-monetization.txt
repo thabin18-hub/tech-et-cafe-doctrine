@@ -1,0 +1,126 @@
+PROMPT #6: STRATÉGIE MONÉTISATION & TUNNEL DE VENTE
+=================================================
+
+Agis en tant que consultant en business digital et creator economy expert.
+
+CONTEXTE:
+Niche: IA/Tech/Fondateurs
+Format: Shorts (30-60s) + occasional long-forms
+Audience: Entrepreneurs/devs 25-45 ans, revenus moyens-élevés
+Objectif: Dépasser AdSense (RPM bas ~0.5-1.0) vers multiple revenue streams
+
+SUJET VIDÉO: [À REMPLIR]
+VIDÉO NUMÉRO: [À REMPLIR - ex: Video #1, #5, etc]
+
+TÂCHE 1: FRONT-END OFFERS (Low ticket, volume)
+
+Identifie 3-5 produits tech pertinents pour affiliate:
+Pour chacun:
+- Produit: [Nom exact]
+- Link: [Affiliate link if available]
+- Commission: [X% ou $X per sale]
+- Hook: [Comment l'intégrer naturellement dans le script?]
+- Estimated CTR: [X% - click-through rate]
+- Estimated conversion: [X% - ventes sur clicks]
+- Why it works: [Pourquoi audience l'achèterait?]
+- Integration timing: [Où dans la vidéo? Hook, body, CTA?]
+
+Produits numériques (si applicable):
+- Produit: [Email course / Guide PDF / Templates]
+- Price: [$X]
+- Landing page: [Où diriger traffic?]
+- CTA timing: [Quand mentionner dans vidéo?]
+
+TÂCHE 2: HIGH-TICKET OFFERS (Premium, profitability)
+
+Sponsorship vidéo:
+- Prospect company: [Ex: GitHub, Linear, Anthropic, Notion]
+- Package: [$X pour vidéo + mention naturelle]
+- Fit: [Pourquoi audience cible l'apprécierait?]
+- Integration note: [Comment le faire naturellement?]
+
+Community/Course premium (future):
+- Concept: [Quoi enseigner? Ex: "AI for founders"]
+- Price: [$X/mois]
+- Value prop: [Quoi YouTube libre ne donne pas?]
+- Target: [Qui achèterait? Ex: "Founders visant $1M+ ARR"]
+
+TÂCHE 3: PLAN D'INTÉGRATION (Prochaines 10 vidéos)
+
+Pour chaque vidéo:
+Video #X: [Sujet]
+  → Front-end: Affiliation [Produit Y] CTA @ [00:XX]
+  → High-ticket: Sponsor [Company Z] mention @ [00:XX]
+  → Notes: [Tone naturelle? Organic fit?]
+
+TÂCHE 4: ANNUAL ROADMAP (Revenue mix projection)
+
+Prédire mix 12 mois:
+- Month 1-4: [X% AdSense, Y% Affiliation, Z% Sponsors]
+- Month 5-8: [% projections]
+- Month 9-12: [% projections]
+- Target monthly revenue: [$X by month 12]
+
+VALIDATION CHECKLIST:
+
+✓ Affiliations réelles existantes (vérifiable)?
+✓ Commissions réalistes (X% ou $X)?
+✓ CTA organique (pas "click this")?
+✓ Affiliation = produit tu recommanderais vraiment?
+✓ Sponsorship prospects = relevant pour audience?
+✓ High-ticket package = viable (not too aggressive)?
+✓ 12-month roadmap = conservateur (not optimistic)?
+
+OUTPUT FORMAT:
+
+```
+═══════════════════════════════════════════════════════════
+FRONT-END OFFERS (Affiliate + Digital Products)
+═══════════════════════════════════════════════════════════
+
+| Produit | Commission | Integration | CTR est. | Conversion est. |
+|---------|------------|-------------|----------|-----------------|
+| [Product 1] | [X%] | [Hook/Body/CTA] | [X%] | [X%] |
+| [Product 2] | [X%] | [Hook/Body/CTA] | [X%] | [X%] |
+
+═══════════════════════════════════════════════════════════
+HIGH-TICKET OFFERS (Sponsorship + Community)
+═══════════════════════════════════════════════════════════
+
+Sponsorship Package:
+- Prospect: [Company]
+- Price: [$X]
+- Fit: [Why relevant?]
+
+Community/Course:
+- Concept: [What?]
+- Price: [$X/mth]
+- Value: [Why unique vs YouTube free?]
+
+═══════════════════════════════════════════════════════════
+10-VIDEO INTEGRATION PLAN
+═══════════════════════════════════════════════════════════
+
+Video #1: [Subject] → Affiliation [Product X] @ 00:45
+Video #2: [Subject] → Sponsor [Company Y] native @ 01:15
+Video #3: [Subject] → Community pitch (soft mention) @ 02:30
+
+[etc]
+
+═══════════════════════════════════════════════════════════
+12-MONTH REVENUE ROADMAP
+═══════════════════════════════════════════════════════════
+
+Month 1-4: 70% AdSense, 25% Affiliation, 5% Sponsors → $500/month
+Month 5-8: 60% AdSense, 30% Affiliation, 10% Sponsors → $1200/month
+Month 9-12: 50% AdSense, 35% Affiliation, 15% Sponsors → $2000/month
+
+Target: $500 → $1200 → $2000/month by Month 12
+```
+
+RÈGLES STRICTES:
+✓ Tous les liens affiliate vérifiés (real programs)
+✓ Pas de hard-selling (organique toujours)
+✓ Sponsorship prospects = tier-1 companies (credibility)
+✓ Revenue projections = conservative (under-promise, over-deliver)
+✓ CTA integrate into script naturellement (not forced)

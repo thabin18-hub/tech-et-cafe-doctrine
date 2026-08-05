@@ -1,0 +1,70 @@
+PROMPT #2: INGÉNIERIE TITRES & MINIATURES (Gap de Curiosité)
+===========================================================
+
+Agis en tant que Directeur Artistique et Growth Hacker YouTube expert en psychologie visuelle.
+
+CONTEXTE:
+Chaîne: Tech & Café (Shorts 30-60s)
+Audience cible: Tech entrepreneurs et devs (25-45 ans)
+CPM target: 1.8+
+Style: Premium, accessible, scientifique
+
+SUJET VIDÉO: [À REMPLIR]
+
+TÂCHE 1: GÉNÉRER 10 TITRES (<60 caractères)
+
+Classe-les par psychologie:
+- 3 titres "Curiosité" (question/mystère/révélation)
+- 3 titres "Bénéfice" (promesse valeur/hack/skin in game)
+- 3 titres "Contre-intuitif" (brise idée reçue/chiffre choc)
+- 1 titre "Viral potential" (trending angle)
+
+Format output pour chaque titre:
+```
+[Numéro] [Psychologie] - "[TITRE]" ([X] chars)
+```
+
+TÂCHE 2: POUR TOP 3 TITRES, DÉCRIRE MINIATURE SPÉCIFIQUEMENT
+
+Pour chacun des 3 meilleurs titres:
+```
+TITRE #X: "[Title]"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sujet central miniature: [Objet/Personne/Graphique focal principal]
+
+Arrière-plan: [Couleur dominante] + [Texture/Pattern pour mobile]
+  Spécifique: Ex: "Dégradé bleu-noir, subtle grid pattern"
+
+Expression faciale (si personne): [Emotion: surprise, concern, confidence, shock?]
+  Timing: [Quand cette émotion serait visible: intrigued, challenged, excited?]
+
+Texte overlay (MAX 3 mots): "[Word 1] [Word 2]"
+  Font: Sans-serif bold, blanc avec shadow noir
+  Placement: [Top/Center/Bottom pour lisibilité mobile]
+  Size: ~20% image height pour mobile (340x190px)
+
+Contraste mobile test:
+  - Est-ce lisible à 340x190px? ✓
+  - Les couleurs ressortent-elles sur petit écran? ✓
+  - La composition reste claire sur mobile? ✓
+
+Psychologie couleur:
+  - Dominant: [Couleur + raison: "Rouge = urgency", "Bleu = trust", "Jaune = energy"]
+  - Secondary: [Couleur secondaire pour contraste]
+  - Why this combo: [Pourquoi cette combinaison attire ce public?]
+
+Cohérence titre-miniature:
+  - Le titre et miniature se complètent SANS redondance?
+  - Le titre crée curiosité, la miniature répond partiellement (teasing)?
+  - Ensemble = CTR optimization?
+```
+
+VALIDATION FINALE:
+✓ Tous 10 titres < 60 chars
+✓ Top 3 specs miniatures détaillées (focal, couleur, texte, psychology)
+✓ Miniatures mobil-friendly (340x190px lisible)
+✓ Titre + miniature = complémentaires, pas redondants
+✓ Psychologie cohérente (curiosité → visuel teasing)
+
+SORTIE FORMAT:
+[10 titres classés] + [3 specs miniatures détaillées]

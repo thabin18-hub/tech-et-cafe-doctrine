@@ -1,0 +1,82 @@
+PROMPT #4: DÉCOUPAGE B-ROLL ET AMBIANCE VISUELLE
+==============================================
+
+Agis en tant que monteur vidéo senior expert en rythme, pacing et storytelling visuel.
+
+CONTEXTE:
+Format: Short (30-60s) ou Long-form
+Durée cible: [À remplir]
+Style: Cinématique, moderne, premium
+
+SCRIPT: [À insérer ci-après]
+
+TÂCHE: Créer tableau découpage technique scène par scène
+
+OUTPUT FORMAT - TABLEAU DÉCOUPAGE:
+
+| Timecode | Texte dit | Effet visuel | B-Roll suggestion | Sound design |
+|----------|-----------|--------------|------------------|--------------|
+| 00:00-00:03 | [Exact text from script] | [Effet screen] | [Asset description] | [Sound type] |
+| [etc] | | | | |
+
+DÉTAILS PAR COLONNE:
+
+1️⃣ TIMECODE:
+   Format: [MM:SS-MM:SS] en secondes
+   Doit matcher durée script texte
+
+2️⃣ TEXTE DIT:
+   Copie EXACTE du script (vérifie alignment audio)
+
+3️⃣ EFFET VISUEL (à l'écran):
+   - Texte cinétique: [Texte exact + animation]
+     Ex: "Texte 'Claude' fade-in 0.3s, hold 2s, exit zoom 1.2x"
+   - Graphique/données: [Type + couleur]
+     Ex: "Bar chart rouge trending upward, scale 1s"
+   - Animation mouvement: [Description précise]
+     Ex: "Zoom progressif 1.2x from 0-2s", "Pan left smooth 3s"
+   - Pattern interrupt: [Marqué si applicable]
+     Ex: "🔴 PATTERN INTERRUPT #1 @90s: Visual shock"
+
+4️⃣ B-ROLL SUGGESTION:
+   Source: [Local library / Pexels / Pixabay / Wikimedia / Custom]
+   Description: [PRÉCIS, ex: "Laptop screen showing Claude interface, blue ambient light, close-up"]
+   Duration: [2s, 5s, etc]
+   Mood: [Color grade, ex: "Cool tones desaturated, cinematic"]
+   Transition: [Cut / Fade 100ms / Zoom 200ms / Pan]
+   Usage note: [Pourquoi ce B-roll ici?]
+
+5️⃣ SOUND DESIGN:
+   Type: [Whoosh, beat, silence, tone, ambient, music]
+   Timing: [Exact secondes où son démarre]
+   Duration: [0.2s, 1s, etc]
+   Purpose: [Emphasis / Transition punch / Energy boost / Pattern interrupt]
+   Intensity: [Subtle / Medium / Punchy]
+   Example: "Whoosh 0.3s at 00:05 for transition punch, subtle reverb"
+
+RÈGLES STRICTES:
+
+✓ Pattern interrupts: MINIMUM 1 chaque ~90s (visuel OU son, ou les deux)
+✓ Transitions: fade (60-100ms) naturel, jamais jarring
+✓ Text on-screen: MAX 1 ligne à la fois, sans-serif bold, blanc + shadow noir
+✓ B-roll pacing: change toutes les 5-7s (keeps engagement)
+✓ Sound: whoosh (hook impact), silence (0.2s emphasis), beat (CTA energy)
+✓ Ambiance sonore: Cohérente (pas de mix jarring)
+
+APRÈS LE TABLEAU, FOURNIS RÉSUMÉ:
+
+Total pattern interrupts: [X] (toutes les ~90s? ✓/✗)
+Music/ambient recommendation: [Genre + BPM + mood]
+  Ex: "Cinematic modern electronic, 120-130 BPM, minimal, tense"
+Color grading unity: [Cohérent visuellement?]
+  Ex: "Tous cinématiques bleu-cool, OR tous tech vibrante"
+B-roll coverage: [Percent] estimé
+Visual complexity: [Simple / Moderate / Rich]
+Production notes: [Anything monteur should know?]
+
+VALIDATION:
+✓ Tableau bien formé (parseable CSV)?
+✓ Timecodes corrects et continus?
+✓ Pattern interrupts @~90s?
+✓ B-roll suggestions PRÉCISES (pas "use tech footage")?
+✓ Sound design DESCRIPTIF (monteur peut l'exécuter)?

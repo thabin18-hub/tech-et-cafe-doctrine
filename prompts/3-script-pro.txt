@@ -1,0 +1,84 @@
+PROMPT #3: SCRIPT PRO À RÉTENTION MAXIMALE (Structure 3 actes)
+============================================================
+
+Agis en tant que scénariste professionnel pour documentaires premium (style Vox, TED-Ed, Kurzgesagt).
+
+CONTEXTE:
+- Format: Short (50s) ou Long-format
+- Niche: IA/Tech/Fondateurs
+- Audience: Décideurs tech 25-45 ans (éduqués, tech-savvy)
+- Style: Accessible + intelligent (pas condescendant, pas jargon inutile)
+
+SUJET: [À REMPLIR]
+DURÉE: [À REMPLIR - ex: 50s]
+HOOK STRATEGY (optionnel): [From directives - ex: "surprise + contre-intuitif"]
+
+STRUCTURE REQUISE:
+
+[00:00-00:15] 🎬 HOOK (15 secondes)
+- Accroche percutante qui brise UNE idée reçue
+- OU question provocante
+- OU chiffre contre-intuitif révélateur
+- Format: "Tu croyais que X, mais en réalité..." OU "Et si Y était possible?"
+- Tone: Confidentiel, intrigué, léger
+
+[00:15-00:45] 🏗️ SETUP (30 secondes)
+- Établis contexte/problème clairement
+- Pose la question centrale implicitement
+- Crée la curiosité (pourquoi devrais-je écouter?)
+- Une ou deux phrases max
+
+[00:45-DURATION-10s] 🔍 CORPS (40-70s pour Shorts, 2-5min pour long-form)
+- Pattern interrupts TOUTES les 90 secondes (relance narrative ou visuelle)
+- Utilise exemples concrets (PAS d'abstractions)
+- Voix ACTIVE, phrases COURTES
+- Un concept par 20-30 secondes
+- Transitions naturelles (pas de "euh", "hmmm")
+
+[DURATION-10s-DURATION] 🎯 CTA (10 secondes)
+- Appel à l'action ORGANIQUE (pas "click this link!")
+- Aligné monétisation si possible
+- Format: "Abonne-toi pour X" ou "Découvre Y" (invites action naturelle)
+- Tone: Confidentiel, call them out gently
+
+RÈGLES STRICTES:
+✓ Langage simple, actif, percutant
+✓ Zéro jargon inutile (ou explique si absolument nécessaire)
+✓ Une idée par phrase
+✓ Verbes d'action (utilise "Claude code 10x plus vite", pas "il y a une technologie qui...")
+✓ Pas de filler words ("euh", "hmmm", "voyez")
+✓ Respire naturellement (marqué par [PAUSE])
+
+OUTPUT FORMAT:
+
+```
+[00:00-00:03] SPEAKER: "Hook sentence 1, brise l'idée reçue."
+[00:03-00:08] SPEAKER: "Hook sentence 2, mystère amplifié."
+[00:08-00:15] SPEAKER: "Hook sentence 3, appel implicite à écouter."
+
+[00:15-00:20] SPEAKER: "Setup sentence 1, contexte."
+[00:20-00:30] SPEAKER: "Setup sentence 2, pourquoi ça compte."
+[00:30-00:45] SPEAKER: "Setup sentence 3, transition au corps."
+
+[00:45-00:65] SPEAKER: "Corps point 1, exemple concret."
+[PATTERN INTERRUPT ~90s]
+[01:15-01:35] SPEAKER: "Corps point 2, implications."
+[PATTERN INTERRUPT ~90s]
+[01:45-02:00] SPEAKER: "Corps point 3, conclusion nuancée."
+
+[DURATION-10s-DURATION] SPEAKER: "CTA organique, call to action."
+```
+
+APRÈS LE SCRIPT COMPLET, FOURNIS:
+
+Hook strength: [1-10] - Pourquoi?
+Pattern interrupts count: [X] - Quand?
+Estimated retention: [X%] - Basé sur structure
+Affiliate/CTA opportunity: [Où l'intégrer naturellement?]
+
+VALIDATION:
+✓ Hook percutant (score 7+)?
+✓ Pattern interrupts ~90s?
+✓ Langage accessible (niveau lycée)?
+✓ Durée exact [X]s (comptage mots/vitesse)?
+✓ CTA organique?

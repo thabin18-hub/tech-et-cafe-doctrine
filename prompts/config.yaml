@@ -1,0 +1,281 @@
+# Configuration Centrale: 6 Prompts Stratégiques
+# Orchestration pour Tech & Café YouTube
+# Version: 1.0 | Statut: Ready Phase 1 (Manual testing)
+
+version: "1.0"
+created: "2026-08-01"
+status: "ready_phase_1_manual_testing"
+
+# ════════════════════════════════════════════════════════════════════
+# PROMPTS CONFIGURATION
+# ════════════════════════════════════════════════════════════════════
+
+prompts:
+  1_audit_niche:
+    name: "Audit Niche et Positionnement"
+    file: "1-audit-niche.txt"
+    frequency: "quarterly"
+    trigger: "manual"
+    inputs:
+      - niche
+      - audience_type
+    outputs:
+      - NICHE-AUDIT-2026.md
+    time_estimate_minutes: 30
+    automation: "Not planned (too strategic)"
+
+  2_titres_miniatures:
+    name: "Ingénierie Titres & Miniatures"
+    file: "2-titres-miniatures.txt"
+    frequency: "per_video"
+    trigger: "sujet_defined"
+    inputs:
+      - sujet
+      - directives_optional
+    outputs:
+      - titles-thumbnails.md
+    time_estimate_minutes: 5
+    automation: "Phase 2 Cloud API (Claude API)"
+
+  3_script_pro:
+    name: "Script Pro à Rétention Maximale"
+    file: "3-script-pro.txt"
+    frequency: "per_video"
+    trigger: "titre_approuvé"
+    inputs:
+      - sujet
+      - titre
+      - directives.duree_cible
+      - directives.hook_strategy
+    outputs:
+      - script-final.txt
+    time_estimate_minutes: 30
+    automation: "Phase 2 Cloud API (Claude API)"
+
+  4_broll_decoupe:
+    name: "Découpage B-Roll et Ambiance Visuelle"
+    file: "4-broll-decoupe.txt"
+    frequency: "per_video"
+    trigger: "script_validated"
+    inputs:
+      - script_complet
+    outputs:
+      - storyboard-technique.csv
+    time_estimate_minutes: 20
+    automation: "Phase 2 Cloud API (Claude API)"
+
+  5_seo_metadata:
+    name: "Optimisation SEO et Méta-Description"
+    file: "5-seo-metadata.txt"
+    frequency: "per_video"
+    trigger: "24h_before_publication"
+    inputs:
+      - titre_final
+      - sujet
+      - script_optional
+    outputs:
+      - seo-metadata.md
+    time_estimate_minutes: 10
+    automation: "Phase 2 Cloud API (Claude API, delayed 24h)"
+
+  6_monetization:
+    name: "Stratégie Monétisation & Tunnel de Vente"
+    file: "6-monetization.txt"
+    frequency: "per_video"
+    trigger: "24h_before_publication"
+    inputs:
+      - sujet
+      - video_number
+      - audience_profile
+    outputs:
+      - monetization-notes.md
+    time_estimate_minutes: 10
+    automation: "Phase 2 Cloud API (Claude API, delayed 24h)"
+
+# ════════════════════════════════════════════════════════════════════
+# WORKFLOW & TIMELINE
+# ════════════════════════════════════════════════════════════════════
+
+workflow:
+  phase_1_manual_testing:
+    duration: "Week 1 (01-08/08)"
+    description: "Test all 6 prompts manually via Claude chat"
+    steps:
+      - step_1: "Read all 6 prompts (PROMPTS-STRATEGIQUES-PRODUCTION.md)"
+      - step_2: "Run Prompt #1 (Audit Niche) manually → NICHE-AUDIT-2026.md"
+      - step_3: "Run Prompts #2-6 on real video case studies"
+      - step_4: "Validate output format + quality"
+      - step_5: "Adjust prompts if needed (v1.0 → v1.1)"
+      - step_6: "Prep for Phase 2 (Cloud API integration)"
+
+  phase_2_cloud_integration:
+    duration: "Week 2-3 (11-18/08)"
+    description: "Integrate Prompts #2-6 into Cloud routine production"
+    steps:
+      - step_1: "Modify routine `trig_01QTPw2RxoroMRcD4E3FthPn`"
+      - step_2: "Add Claude API calls for Prompts #2-4 (live 10h GMT)"
+      - step_3: "Scheduler delayed tasks for Prompts #5-6 (24h before)"
+      - step_4: "Test full cycle: sujet → script → découpage → upload"
+      - step_5: "Live monitoring (CTR, retention, RPM)"
+
+  phase_3_optimization:
+    duration: "Week 4+ (18-25/08+)"
+    description: "Measure impact + optimize prompts iteratively"
+    kpis:
+      - titre_ctr_gain: "+15%"
+      - retention_gain: "+5-10%"
+      - rpm_gain: "+80-120%"
+      - production_time_reduction: "-25% per video"
+
+# ════════════════════════════════════════════════════════════════════
+# DAILY PRODUCTION TIMELINE (After Phase 2)
+# ════════════════════════════════════════════════════════════════════
+
+daily_production_schedule:
+  lundi_10h00_gmt:
+    description: "Routine Production démarre"
+    actions:
+      - Load directives (directives-production-YYYY-MM-DD.yaml)
+      - Scrape trends + filter par angles privilégiés
+      - Select TOP 2 sujets par CPM estimate
+
+  lundi_10h05_gmt:
+    description: "Prompt #2 (Titres/Miniatures) - Sujet 1"
+    time_estimate: "5min"
+    output: "titles-thumbnails.md"
+    next_step: "Select meilleur titre"
+
+  lundi_10h15_gmt:
+    description: "Prompt #3 (Script) - Sujet 1 + Titre sélectionné"
+    time_estimate: "30min (API async)"
+    output: "script-final.txt"
+    next_step: "Validate hook + structure"
+
+  lundi_10h45_gmt:
+    description: "Prompt #4 (Découpage B-Roll) - Parallel avec voix off"
+    time_estimate: "20min (API async)"
+    output: "storyboard-technique.csv"
+    next_step: "Brief monteur avec découpage"
+
+  lundi_11h30_gmt:
+    description: "Voix off + Montage + Upload YouTube (privé)"
+    actions:
+      - Generate TTS (Google Cloud Text-to-Speech)
+      - Retrieve B-roll from library
+      - Montage (automatisé ou monteur)
+      - Upload YouTube private
+    output: "video-1.mp4 + metadata.json"
+
+  lundi_12h00_gmt:
+    description: "Repeat Prompts #2-4 pour Sujet 2"
+    time_estimate: "1h total"
+    output: "2nd video générée et uploadée"
+
+  dimanche_18h00_gmt:
+    description: "Prompt #5 (SEO/Metadata) + Prompt #6 (Monétisation)"
+    trigger: "24h avant publication"
+    time_estimate: "20min total"
+    outputs:
+      - seo-metadata.md
+      - monetization-notes.md
+
+  dimanche_19h00_gmt:
+    description: "Théo validation (YouTube Studio)"
+    actions:
+      - Copy description + tags (from seo-metadata.md)
+      - Review affiliation/CTA (from monetization-notes.md)
+      - Pin engagement comment
+      - Schedule publication lundi 11h
+
+# ════════════════════════════════════════════════════════════════════
+# VALIDATION CHECKPOINTS
+# ════════════════════════════════════════════════════════════════════
+
+validation:
+  prompt_1_output:
+    requirement: "5 sub-niches + 3 concepts + audience profile"
+    format: "JSON structured"
+    quality_gate: "All fields populated"
+
+  prompt_2_output:
+    requirement: "10 titres (<60 chars) + 3 miniature specs"
+    format: "Markdown structured"
+    quality_gate: "Top 3 specs detail (focal, color, text, psychology)"
+
+  prompt_3_output:
+    requirement: "Script complet avec hook (15s) + pattern interrupts ~90s"
+    format: "Plain text with timecodes"
+    quality_gate: "Hook score 7+, language accessible, durée exact"
+
+  prompt_4_output:
+    requirement: "Tableau découpage (timecode/texte/visuels/B-roll/son)"
+    format: "CSV parseable"
+    quality_gate: "Pattern interrupts @~90s, B-roll descriptions précises"
+
+  prompt_5_output:
+    requirement: "Description 300w + 15 tags + pinned comment"
+    format: "Markdown structured"
+    quality_gate: "Keywords in first 2 phrases, 15 tags ranked"
+
+  prompt_6_output:
+    requirement: "Affiliations + High-ticket offers + 12-month roadmap"
+    format: "Markdown structured"
+    quality_gate: "CTAs organic, revenue projections conservative"
+
+# ════════════════════════════════════════════════════════════════════
+# SUCCESS METRICS (Phase 1 + 2)
+# ════════════════════════════════════════════════════════════════════
+
+success_metrics:
+  phase_1_manual_testing:
+    - All 6 prompts tested on real cases
+    - Output format validated (parseable)
+    - Quality acceptable (hook 7+, script accessible, SEO complete)
+    - Adjustments made if needed (v1.0 → v1.1)
+    - Ready for Cloud API integration
+
+  phase_2_cloud_integration:
+    - Routine production auto-generates Prompts #2-4 daily
+    - Prompts #5-6 scheduled 24h before
+    - Full cycle: sujet → upload YouTube (private) in ~1.5h
+    - Théo validation workflow active
+    - Live monitoring (CTR, retention, RPM tracking)
+
+  phase_3_optimization:
+    - Titre CTR: +15% vs baseline
+    - Retention @ 50%: +5-10%
+    - RPM: +80-120% (affiliation + sponsors)
+    - Production time: -25% per video vs manual
+
+# ════════════════════════════════════════════════════════════════════
+# NOTES & CONTEXT
+# ════════════════════════════════════════════════════════════════════
+
+context:
+  niche: "IA/Tech/Fondateurs"
+  format: "Shorts (30-60s) + occasional long-form"
+  audience: "Tech entrepreneurs, devs, founders 25-45 ans"
+  cpm_target: "1.8+"
+  production_rhythm: "2 videos/day, 5 days/week = 10 videos/week"
+  validation_owner: "Théo (YouTube Studio)"
+
+notes: |
+  - Phase 1: Manual testing this week (01-08/08) → validates output quality
+  - Phase 2: Cloud integration next week (11-18/08) → automates Prompts #2-6
+  - Phase 3: Ongoing optimization → measure impact + adjust prompts
+  - All prompts are iterative (v1.0 → v1.1 → v2.0 as we learn)
+  - Prompts designed for Tech & Café niche (adaptable for other niches)
+
+# ════════════════════════════════════════════════════════════════════
+# CHANGELOG
+# ════════════════════════════════════════════════════════════════════
+
+changelog:
+  - version: "1.0"
+    date: "2026-08-01"
+    status: "Ready Phase 1"
+    changes: |
+      - All 6 prompts defined and versioned
+      - Orchestration documented
+      - Phase 1 manual testing checklist ready
+      - Phase 2/3 timeline defined

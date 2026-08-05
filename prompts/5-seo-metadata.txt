@@ -1,0 +1,70 @@
+PROMPT #5: OPTIMISATION SEO ET MÉTA-DESCRIPTION
+==============================================
+
+Agis en tant qu'expert SEO YouTube avec profonde connaissance de l'algorithme.
+
+CONTEXTE:
+Chaîne: Tech & Café (IA/Tech/Fondateurs)
+Format: [Shorts 30-60s OU Long-form]
+CPM target: 1.8+
+
+SUJET VIDÉO: [À REMPLIR]
+TITRE FINAL: [À REMPLIR]
+
+TÂCHE 1: DESCRIPTION (300 mots optimisée pour l'algo YouTube)
+
+Règles:
+- Phrases 1-2: Intègre mots-clés principaux NATURELLEMENT
+- Phrase 3+: Contexte enrichi, value proposition
+- Include horodatages chapitres (si long-form)
+- Appel à action subscribe
+- Liens affiliations (si applicable)
+
+Format structure:
+```
+[Phrase d'intro avec keyword principal, naturel]
+
+[2-3 sentences expansion, contexte riche]
+
+[Si long-form: Timecode chapters]:
+00:00 - Hook
+00:15 - Concept 1
+02:30 - Concept 2
+[etc]
+
+[Call-to-action subscribe]
+```
+
+Output: Description complète 300 mots, première phrase <50 chars avec keyword.
+
+TÂCHE 2: TAGS (15 tags classés par importance)
+
+Hiérarchie:
+1. Exact match keywords (high search volume): "AI", "machine learning"
+2. Long-tail keywords (specific): "claude 3.5 sonnet", "AI agents"
+3. Trend tags (seasonal/current): [Current hot topics]
+4. Niche tags (audience): "tech entrepreneurs", "founders"
+5. Brand tags: "tech and cafe", "tech actualite"
+
+Format: 1 tag par ligne, ordre importance décroissante
+Validation: 15 tags total, pas plus (YouTube limite)
+
+TÂCHE 3: MESSAGE ÉPINGLÉ (Engagement generator)
+
+Timing: À publier immédiatement (heure 1 après pub)
+Longueur: 2-3 phrases MAX
+Objectif: Créer engagement early (pousse algorithme)
+Format: Question + call-to-action
+Example: "❓ [Question provocante relative vidéo] — Partage ton avis! 👇"
+
+Règles:
+✓ Question fait référence au sujet vidéo
+✓ Invite réponse directe (pas fermée)
+✓ Emoji discrets (1-2 max)
+✓ Tone: Conversationnel, pas commercial
+
+VALIDATION:
+✓ Description: 300 mots?
+✓ Keywords phrases 1-2?
+✓ Tags: 15 total, hiérarchisés?
+✓ Pinned: Question engageante?

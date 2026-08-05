@@ -1,0 +1,393 @@
+# PRODUCTION CONFIG - Tech & Cafe
+# Mis a jour automatiquement par routine "Reunion strategique hebdomadaire" (lundi 9h GMT)
+# Lu par routines production: shorts (7h + 10h GMT), video longue (18h GMT),
+# suivi performance (20h GMT quotidien)
+#
+# AUTORITE EDITORIALE (par ordre, priment sur ce fichier en cas de conflit):
+# 1. CONTEXTE-GLOBAL-TECH-CAFE.md (identite, vision, valeurs, hierarchie decision)
+# 2. CHARTE-EDITORIALE.md (ton, style, sujets autorises)
+# 3. GUIDE-DE-PRODUCTION.md (pipeline 17 etapes, score qualite seuil 90/100)
+# 4. GUIDE-SEO-YOUTUBE.md (strategie SEO, score seuil 85/100)
+# 5. GUIDE-ANALYSE-PERFORMANCES.md (methode d'analyse, checkpoints 24h/48h/7j/30j)
+# 6. PROCEDURES-OPERATIONNELLES-SOP.md (SOP 01-12, regles de priorite Partie 6)
+# Ce fichier est la traduction operationnelle (technique) de cette doctrine.
+
+---
+metadata:
+  version: "5.0"
+  framework: "doctrine complete Directeur de Production IA (6 documents fondateurs)"
+  derniere_maj: "2026-08-02T22:10:00Z"
+  cycle: "shorts 2x/jour (7h + 10h GMT) + video longue 1x/jour (18h GMT) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
+  charte: "CONTEXTE-GLOBAL-TECH-CAFE.md"
+  gates_qualite:
+    score_global_min: 90
+    score_seo_min: 85
+    comportement_si_echec: "auto-revision jusqu'a 3 tentatives, puis backlog_concepts, puis skip plutot que publier sous le seuil"
+  erreurs_post_publication:
+    niveau_1_mineure: "correction description ou commentaire"
+    niveau_2_importante: "correction visible aupres du public"
+    niveau_3_majeure: "evaluation d'une correction publique complete"
+    note: "documenter cause + correction de processus dans BASE-DE-CONNAISSANCES.md a chaque fois (SOP 10)"
+
+# === POLITIQUE DE CONFIDENTIALITE (upload) ===
+# IMPORTANT: le champ status.privacyStatus DOIT toujours etre explicite dans
+# l'appel API videos.insert (l'API YouTube publie en PUBLIC par defaut si le
+# champ est omis). Verifier via videos.list juste apres upload, corriger via
+# videos.update si le statut ne correspond pas a celui attendu ci-dessous.
+privacy_policy:
+  shorts:
+    valeur: "private"
+    note: "Prive indefiniment depuis reactivation le 05/08 (decision Theo). Pas de bascule automatique vers public - c'est desormais une decision manuelle future de Theo, pas une date programmee. (Historique: une bascule auto au 07/08 avait ete prevue puis annulee le 05/08 avant de prendre effet.)"
+  video_longue:
+    valeur: "private"
+    note: "Prive (decision Theo, 05/08/2026). Theo valide/publie manuellement via YouTube Studio. Remplace le plan d'origine du 02/08 (public direct des le premier jour) - juge trop risque pour une automatisation quotidienne non supervisee, en particulier juste apres l'incident de securite du 04/08 sur ce meme trigger."
+
+# === REACTIVATION SHORTS + VIDEO LONGUE (05/08/2026) ===
+# Les 2 triggers shorts et le trigger video longue ont ete reactives le 05/08:
+# - trig_01QTPw2RxoroMRcD4E3FthPn (short #1, 7h GMT): re-enabled, contenu mis a
+#   jour (privacyStatus = private indefiniment, plus de logique de date)
+# - trig_01FPLpqqy8Vh6jmrumuptMzU (short #2, 10h GMT): NOUVEAU trigger, recree
+#   car l'original trig_01NXB2L6FyhAcC381Hg3RpRX n'existait plus (supprime
+#   pendant le nettoyage securite du 04/08, cause exacte inconnue)
+# - trig_0147QDfn9iM9tgPJGYZySEnL (video longue, 18h GMT): entierement
+#   reecrit (etait vide/suspendu depuis l'incident du 04/08), inclut
+#   desormais conformite CHARTE-GRAPHIQUE.md/GUIDE-MINIATURES.md, chapitres
+#   YouTube obligatoires, montage a cuts variables + texte incruste
+todo_reactivation_shorts:
+  date_cible: "2026-08-05"
+  triggers_reactives:
+    - "trig_01QTPw2RxoroMRcD4E3FthPn"
+    - "trig_01FPLpqqy8Vh6jmrumuptMzU"
+    - "trig_0147QDfn9iM9tgPJGYZySEnL"
+  fait: true
+
+# === CRITERES DE SELECTION EDITORIALE (charte section 5 et 12) ===
+# Un sujet ne peut etre produit QUE s'il repond a au moins un critere de
+# valeur, et la hierarchie de decision s'applique dans cet ordre en cas de
+# conflit entre options.
+criteres_qualite:
+  valeur_minimale_requise:
+    - "apprendre quelque chose au spectateur"
+    - "resoudre un probleme concret"
+    - "faire gagner du temps"
+    - "expliquer une nouveaute importante"
+    - "demystifier une idee recue"
+    - "aider a mieux utiliser l'IA"
+  regle_stricte: "Si un sujet ne remplit aucun de ces criteres, il n'est PAS produit, meme si le trend/CPM est bon. Repli sur backlog_concepts ou skip ce run."
+  hierarchie_decision:
+    1: "Exactitude des informations (sources verifiees, incertitudes signalees)"
+    2: "Valeur pour le spectateur"
+    3: "Qualite editoriale"
+    4: "Clarte"
+    5: "Performance YouTube (CPM/trend/retention estimee)"
+    6: "Rapidite de publication"
+  note: "La performance YouTube est un critere legitime mais seulement en 5e position: il depart-age des sujets qui ont deja passe les criteres 1-4, il ne les remplace jamais."
+
+# === DIRECTIVES HEBDO (prioritaire si fichier existe) ===
+directives_hebdomadaire:
+  enabled: true
+  chemin: "directives/directives-production-YYYY-MM-DD.yaml"
+  fallback_si_absent: "directives.default"
+  note: "Remplace directives.default chaque lundi 10h. Generées lundi 9h par routine analytique. Les directives affinent le CIBLAGE (angles, duree, hook) mais ne peuvent jamais abaisser la barre de criteres_qualite ci-dessus."
+
+# === DIRECTIVES COURANTES ===
+directives:
+  default:
+    angles_privilegier:
+      - "IA & fondateurs tech"
+      - "Actualite tech breakingn news"
+      - "Trends IA generative"
+      - "Actualites des grands labs IA (Anthropic, OpenAI, Google DeepMind) avec angle 'ce que ca change pour toi' plutot que purement factuel/financier (mis a jour 03/08, donnees reelles semaine 1: 971/760/438 vues pour les videos nommant un acteur majeur + chiffre concret, vs 0-1 vue pour les sujets institutionnels/financiers abstraits)"
+    angles_eviter:
+      - "Crypto/blockchain"
+      - "Memes/viral culture"
+      - "Actualite purement financiere/contractuelle sans impact utilisateur explicite (contrats gouvernementaux, levees de fonds sans contexte produit, changements de poste) - mis a jour 03/08, 0-1 vue sur 3 exemples semaine 1, echantillon encore petit a confirmer"
+    duree_cible: "45-55s"
+    hook_strategy: "clarte et pertinence d'abord, surprise/contre-intuitif si ca sert la pedagogie (jamais du putaclic qui trahit le contenu). Pattern semaine 1: nommer l'acteur IA majeur des les 3 premieres secondes + chiffre concret + benefice/impact pour le spectateur."
+    retention_target: "40%"
+    affiliation_priority:
+      - "tech books & courses"
+      - "AI tools freemium"
+    cpm_target_min: "1.5"
+    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite. Voir directives/directives-production-2026-08-03.yaml pour l'analyse complete semaine 1 (echantillon encore petit, hypotheses a confirmer)."
+
+# === BACKLOG EVERGREEN ===
+# Concepts rechauffables si veille echoue ou pour complementer
+backlog_concepts:
+  - id: "EG-001"
+    titre: "5 inventions tech oubliees"
+    angle: "nostalgia + education"
+    description: "Retrace 5 technologies qu'on croyait revolutionnaires mais qui ont disparu. Pourquoi?"
+    structure: "Hook: 'Cette techno valait des milliards, où elle est passée?' | Corps: 5 exemples courts | CTA: 'Laquelle tu oubliais?'"
+    cpm_estimate: "1.8"
+
+  - id: "EG-002"
+    titre: "Predictions tech que tout le monde se trompait"
+    angle: "fait-checking futuriste"
+    description: "Compile les predictions tech FAUSSES des 10 dernieres annees (experts, CEO, influenceurs)"
+    structure: "Hook: 'Les experts se sont tous trompes' | Corps: 3-4 predictions debunkees | CTA: 'Quelle prediction tu croyais?'"
+    cpm_estimate: "1.6"
+
+  - id: "EG-003"
+    titre: "Comment les IA actuelles se feraient hacker facilement"
+    angle: "security awareness"
+    description: "Explique 3 vulnerabilites simples des IA/chatbots qu'un ado peut exploiter"
+    structure: "Hook: 'Ton ChatGPT va faire ce que tu veux (pas ce qu'il devrait)' | Corps: 3 hacks simples demo | CTA: 'T'as teste?'"
+    cpm_estimate: "2.2"
+
+  - id: "EG-004"
+    titre: "Pourquoi les smartphone stagnent depuis 2020"
+    angle: "tech evolution analysis"
+    description: "Analyse pourquoi les innovations smartphone ralentissent (batterie, ecrans, chipsets)"
+    structure: "Hook: 'Tu as le meme phone qu'il y a 3 ans' | Corps: 3 raisons tech + economics | CTA: 'T'es d'accord?'"
+    cpm_estimate: "1.9"
+
+# === A/B TESTING MINIATURES ===
+# Structure pour futur testing (une fois en publication)
+miniature_testing:
+  enabled: false
+  strategy: "une_version_principale_test_futur"
+  variants_par_video: 3
+  test_duration_days: 1
+  swap_condition: "si CTR test > principal + 15%"
+
+# === BRANDING & IDENTITE VISUELLE ===
+# Charte graphique 05/08/2026 (construite avec Théo, finalisée pour miniatures auto)
+branding:
+  autorite_visuelle:
+    - "CHARTE-GRAPHIQUE.md (palette, typographies, éléments récurrents)"
+    - "GUIDE-MINIATURES.md (template, zones, checklist qualité, 3 templates prédéfinis)"
+  palette_couleurs:
+    primary_cyan: "#00D9FF"
+    primary_orange: "#FF9500"
+    bg_black: "#0A0E27"
+    text_white: "#FFFFFF"
+    text_gray: "#4A5568"
+    accent_dark_cyan: "#0099CC"
+    accent_dark_orange: "#CC7700"
+    light_gray: "#E2E8F0"
+  typographies:
+    titres:
+      famille: "Montserrat Black / Inter Bold"
+      poids: 700-900
+      taille_miniature_min: "48px"
+      taille_miniature_normal: "72-96px"
+    corps:
+      famille: "Inter Regular"
+      poids: 400-500
+      taille_miniature: "14-18px"
+    accents_callouts:
+      famille: "Inter Medium / Montserrat Medium"
+      poids: 600
+      taille_miniature: "28-36px"
+  miniatures:
+    dimensions: "1280x720 px (16:9)"
+    safe_zone: "1200x680 px (40px margins)"
+    mobile_preview: "432x243 px (ce que 95% users voient)"
+    format: "PNG ou JPG"
+    compression_max: "500 KB"
+    couleur_space: "sRGB"
+    templates_disponibles:
+      - "Template 1: Impact Direct (titre blanc gros, image glow, callout orange, watermark)"
+      - "Template 2: Curiosité (titre cyan question, image intrigante, box orange, watermark)"
+      - "Template 3: Minimaliste (gradient noir-cyan, titre blanc, callout mini orange, watermark)"
+    zones_composition:
+      A_titre: "35-40% hauteur, blanc ou cyan, max 2-3 mots, top 20px"
+      B_visuel: "20-30% hauteur, image 400x300 min, centré, position 280-380px"
+      C_callout: "20-25% hauteur, orange sur box clair, bottom 60px"
+      D_watermark: "Logo 80x80, bas-droit (1180px, 620px), 70% opacité"
+    checklist_qualite:
+      - "Dimensions 1280x720 exact"
+      - "Couleurs hex exactes utilisées (copy-paste, pas approximation)"
+      - "Titre lisible à 432x243 px (test mobile size)"
+      - "Orange visible, WCAG AA minimum"
+      - "Watermark présent, discret"
+      - "Pas de texte blanc sur orange"
+      - "Image centrale visible, pas cachée"
+      - "Safe zone 40px respectée"
+      - "Fichier <500 KB"
+      - "PNG/JPG sRGB"
+    qualite_threshold: 90
+    comportement_si_echec: "rejeter plutôt que publier dégradé, scorer <90 = non publication"
+  logo_watermark:
+    assets:
+      - "watermark-shorts.png (150x150, RGBA transparent)"
+      - "watermark-longue.png (150x150, RGBA transparent)"
+      - "icon-transparent-bg.png (260x320, variante alternative)"
+    dimensions: "150x150 px (optimal pour visibilité sans intrusivité)"
+    position_bas_droit: "X: 1110 px, Y: 550 px (1280x720 canvas)"
+    opacite_recommandee: "0.70"
+    drop_shadow: "2px blur subtle"
+  fallbacks:
+    image_introuvable: "background dégradé noir-cyan, agrandir texte, log warning"
+    texte_deborde: "réduire police (min 48px), réarranger zones, tester WCAG"
+    orange_insuffisant: "augmenter opacité box, ajouter border sombre, tester WCAG"
+  metriques_feedback:
+    tracer: "CTR par template, domaines couleur, durée génération (<30s)"
+    ajustement_si: "CTR cyan >20% mieux → diminuer orange; mobile illisible → augmenter police"
+    revision_guide: "tous les 2 semaines basée sur data réelle"
+  notes: "Activar quand Théo commence à publier (necessaire au moins 3-4 jours de data)"
+
+# === VIDEO LONGUE (nouveau format, lance 02/08) ===
+video_longue:
+  enabled: true
+  cadence: "7/semaine (quotidien)"
+  duree_max: "10min (hard cap, viser 7-9min)"
+  objectif_business:
+    cible: "1000 abonnes + 4000h watch time"
+    fenetre: "90 jours"
+    debut: "2026-08-02"
+    fin_indicative: "2026-10-31"
+  cta: "abonnement explicite et repete (intro + milieu + outro), sans etre lourd"
+  structure: "hook fort 15-30s, chapitres/pattern-interrupts ~90s, CTA abonnement recurrent"
+  niche_audit_path: "LONGFORM-NICHE-AUDIT.md"
+  niche_audit_note: "Executer le prompt 1-audit-niche.txt (adapte format long) une seule fois si le fichier n'existe pas encore, puis le reutiliser aux runs suivants."
+  eviter_doublon_avec_shorts_du_jour: true
+
+# === PARAMETRES GLOBAUX ===
+params:
+  production_times:
+    - "short #1: 07:00 GMT"
+    - "short #2: 10:00 GMT - doit eviter le sujet du short #1 du meme jour"
+    - "video longue: 18:00 GMT"
+  output_dir: "videos_prod/YYYY-MM-DD/"
+  output_dir_longue: "videos_prod_longue/YYYY-MM-DD/"
+  metadata_storage: "repo thabin18-hub/echcafe-visual-library"
+  reporting_dir: "livrables/youtube/.../rapports/"
+  directives_dir: "livrables/youtube/.../directives/"
+
+  voix_off:
+    provider: "Google Cloud Text-to-Speech"
+    voice_prefs: ["Studio", "Chirp3-HD"]
+    language: "fr-FR"
+
+  visuels:
+    library_local: "~/bibliotheque-visuels/"
+    library_drive: "Google Drive sync"
+    fallback: "Pexels/Pixabay si besoin"
+
+  qualite:
+    son_design: "whoosh, battement, silence strategique"
+    transitions: "fade, zoom, pan (naturel)"
+    effects: "texte cinetique, zoom progressif (pas tape-a-l-oeil)"
+
+# === CHANGELOG ===
+changelog:
+  - date: "2026-08-05"
+    version: "5.1"
+    change: |
+      Reactivation complete de l'automatisation de production (shorts +
+      video longue), suspendue depuis l'incident de securite du 04/08:
+      - privacy_policy restructuree: shorts et video_longue passent tous
+        les deux en "private" INDEFINIMENT (plus de bascule automatique
+        vers public a date fixe - c'est desormais une decision manuelle
+        de Theo). Annule le plan d'origine (shorts public au 07/08,
+        video longue public direct des le 02/08).
+      - trig_01QTPw2RxoroMRcD4E3FthPn (short #1, 7h GMT): reactive,
+        contenu mis a jour pour retirer la logique de bascule par date
+      - trig_01NXB2L6FyhAcC381Hg3RpRX (short #2, 10h GMT) introuvable
+        (supprime pendant le nettoyage securite du 04/08) -> recree a
+        l'identique sous un nouvel ID: trig_01FPLpqqy8Vh6jmrumuptMzU
+      - trig_0147QDfn9iM9tgPJGYZySEnL (video longue, 18h GMT): entierement
+        reecrit (etait vide, juste un stop de securite, depuis le 04/08).
+        Integre les apprentissages de la production manuelle des 2 videos
+        longues du 04-05/08: conformite stricte CHARTE-GRAPHIQUE.md /
+        GUIDE-MINIATURES.md pour les miniatures, chapitres YouTube
+        obligatoires dans la description, montage a cuts de duree variable
+        (6-9s) avec texte incruste sur les termes cles (baked avant
+        concatenation pour eviter les bugs de timestamp).
+      - Aucun secret en clair dans les 3 prompts de trigger (noms de
+        variables .env uniquement, lecon retenue de l'incident du 04/08)
+    author: "Claude + Theo"
+    status: "Deploye"
+
+  - date: "2026-08-05"
+    change: |
+      Bibliotheque de visuels enrichie (42 nouvelles videos via Pexels):
+      - 14 categories existantes renforcees (2 -> 4-5 videos chacune):
+        artificial-intelligence-robot, programming-code-screen,
+        circuit-board-microchip, cloud-computing-network,
+        world-globe-network-connection, futuristic-abstract-technology-background,
+        laptop-computer-typing, smartphone-mobile-app, startup-office-team,
+        social-media-phone, smart-home-iot-devices, cybersecurity-lock-digital,
+        data-center-servers, science-lab-research
+      - 5 nouvelles categories: brain-neural-network-abstract,
+        video-call-meeting-online, book-reading-library,
+        chatbot-conversation-screen, person-thinking-desk
+      Objectif: reduire la repetition visuelle sur les videos longues
+      (constatee sur les 2 premieres productions du 04/08).
+      Total bibliotheque: 82 videos + images correspondantes (etait 40+40).
+    author: "Claude"
+    status: "Deploye"
+
+  - date: "2026-08-02"
+    version: "5.0"
+    change: |
+      Adoption de la doctrine complete "Directeur de Production IA" (6 documents
+      fondateurs fournis par Theo): CONTEXTE-GLOBAL-TECH-CAFE.md, CHARTE-EDITORIALE.md
+      (partiel), GUIDE-DE-PRODUCTION.md, GUIDE-SEO-YOUTUBE.md,
+      GUIDE-ANALYSE-PERFORMANCES.md, PROCEDURES-OPERATIONNELLES-SOP.md.
+      - Nouveau verrou qualite: score global >=90/100 ET score SEO >=85/100 avant
+        toute publication, avec boucle d'auto-revision (max 3 tentatives) puis
+        repli backlog, puis skip si echec persistant (jamais de publication sous seuil)
+      - Les 3 triggers de production (short #1, short #2, video longue) reecrits
+        pour suivre le pipeline complet SOP 01-05 (veille notee /50, definition
+        idee, recherche/structure/script, titres x10 evalues, miniature, SEO,
+        scoring, checklist pre-publication)
+      - Nouvelle routine quotidienne "Suivi performance" (20h GMT): analyse chaque
+        video aux checkpoints 24h/48h/7j/30j (SOP 07/08), alimente
+        BASE-DE-CONNAISSANCES.md avec les enseignements factuels
+      - Routine hebdo recommandations reecrite en "Reunion strategique
+        hebdomadaire" (SOP 11): analyse contenu/audience/performance, decide
+        arreter/continuer/tester, hierarchie de decision stricte (exactitude >
+        valeur spectateur > qualite > clarte > performance YouTube > rapidite)
+      - Nouveau fichier BASE-DE-CONNAISSANCES.md: memoire strategique (titres/hooks/
+        miniatures/sujets/formats performants, erreurs frequentes, historique scores)
+      - Gestion des erreurs post-publication a 3 niveaux (SOP 10) documentee
+    author: "Claude + Theo"
+    status: "Deploye"
+
+  - date: "2026-08-02"
+    version: "4.0"
+    change: |
+      Adoption de la charte editoriale CONTEXTE-GLOBAL-TECH-CAFE.md (document
+      fondateur v1.0, decision Theo):
+      - Positionnement: qualite/pedagogie/confiance d'abord, pas la viralite/volume
+      - Nouvelle section criteres_qualite: barre de valeur minimale par video
+        (charte section 5) + hierarchie de decision en 6 niveaux (charte section 12)
+        ou la performance YouTube/CPM passe en 5e position, jamais en 1ere
+      - Horaires corriges en GMT reel (le doc dit "07:00/10:00/18:00 GMT" et non
+        heure de Paris comme suppose la veille): short #1 7h GMT, short #2 10h GMT,
+        video longue 18h GMT (etaient 5h/8h/16h GMT)
+      - hook_strategy reformule: clarte/pedagogie d'abord, pas de putaclic
+      - Les 3 triggers cloud de production reecrits en consequence (etape 0
+        "veille priorisee rentabilite" remplacee par "veille priorisee valeur/qualite")
+    author: "Claude + Theo"
+    status: "Deploye"
+
+  - date: "2026-08-02"
+    version: "3.0"
+    change: |
+      Changement de strategie (decision Theo):
+      - Shorts: passage de 1 run/jour (2 videos) a 2 runs distincts (5h + 8h GMT)
+      - Bascule privacyStatus shorts: private jusqu'au 06/09 inclus, public a partir du 07/09
+      - Lancement format video longue (<10min, 7/semaine, 16h GMT, public direct des le 02/08)
+      - Objectif video longue: 1000 abonnes + 4000h watch time en 90 jours (deadline indicative 31/10/2026)
+      - Regle ajoutee: privacyStatus TOUJOURS explicite dans videos.insert + verification post-upload (lecon tiree d'un run ambigu le 02/08)
+    author: "Claude + Theo"
+    status: "Deploye"
+
+  - date: "2026-08-01"
+    version: "2.1"
+    change: |
+      Optimisation routine recommandations:
+      - Template directives-production-2026-08-03.yaml créé (exemple données réelles)
+      - Prompt amélioré (ROUTINE-RECOMMANDATIONS-PROMPT.md): steps détaillés, règles strictes, validation
+      - PRODUCTION-CONFIG.yaml: section directives_hebdomadaire + fallback automatique
+      - Chaîne analytique: rapport dimanche → directives lundi 9h → production lundi 10h
+    author: "Claude (validation + amélioration)"
+    status: "Ready for 02/08 (report) + 03/08 (directives)"
+
+  - date: "2026-08-01"
+    change: "Framework 6-etapes integre + directives + backlog evergreen"
+    author: "Claude + Theo"
