@@ -12,10 +12,14 @@ _Aucune donnée pour le moment. Structure attendue par entrée : hook (texte), v
 _Aucune donnée pour le moment. Structure attendue par entrée : description miniature (couleurs, composition, élément visuel), vidéo, CTR obtenu._
 
 ## Sujets performants
-_Aucune donnée pour le moment. Structure attendue par entrée : thème, angle, audience concernée, résultats._
+- **Thème** : actualité réglementaire/sociétale à fort enjeu concret et daté (ex. "La France interdit les réseaux sociaux aux moins de 15 ans", `oBFEl27GyKQ`, Short 33s, publié 2026-08-01).
+  **Angle** : fait factuel fort en titre, entrée en vigueur d'une loi, conséquence directe pour une large partie du public (parents, ados, éducateurs) plutôt qu'un sujet IA pur.
+  **Audience concernée** : grand public au croisement tech/société, au-delà de la seule audience IA de la chaîne.
+  **Résultats (checkpoint 7 jours, 2026-08-07)** : 235 vues — la meilleure performance de la chaîne à ce jour (comparé à 0-9 vues pour les 9 autres vidéos de la même semaine analysées au même run), 3 abonnés générés, 3 likes. **93% du trafic (219/235 vues) vient du flux Shorts** (`insightTrafficSourceType=SHORTS`), signe d'une reprise algorithmique réelle — la première observée sur cette chaîne. Point de vigilance : rétention seulement 34,7% (chute rapide après le hook), donc le sujet/angle fonctionne pour déclencher la distribution mais le développement du script doit être resserré. Voir `suivi/2026-08-07_oBFEl27GyKQ_7j.md` pour le détail complet.
 
 ## Formats performants
-_Aucune donnée pour le moment. Structure attendue par entrée : durée, rythme, structure, résultats._
+- **Format** : Short (~33-40s) sur une actualité produit IA nommée (ex. "Claude peut maintenant te répondre avec son cerveau le plus puissant", `aTqUQkqq1kI`, publié 2026-07-31).
+  **Résultats (checkpoint 7 jours)** : échantillon faible (9 vues) mais **100% du trafic vient de YT_SEARCH**, 0% de flux Shorts/recommandation — à l'inverse du Short réglementaire ci-dessus qui a été poussé par l'algorithme. Hypothèse à confirmer sur davantage de vidéos : les sujets "actualité produit IA nommée" se découvrent par recherche intentionnelle (mot-clé de marque) plutôt que par recommandation, alors que les sujets sociétaux à fort enjeu peuvent être repris par le flux Shorts. Si confirmé, cela justifierait un CTA de fin différent selon le type de sujet (le trafic recherche est plus intentionnel mais moins volumineux).
 
 ## Erreurs fréquentes
 - **Erreur** : échec silencieux/bloquant de la routine vidéo longue quotidienne, aucune vidéo produite.
@@ -40,6 +44,16 @@ _Aucune donnée pour le moment. Structure attendue par entrée : durée, rythme,
   **Cause** : `env | grep -iE "TTS"` (sans le passer ensuite dans un `sed` de redaction, contrairement au reste du diagnostic de cette session) a affiché la valeur complète de `TTS_API_KEY` dans la sortie de commande. C'est exactement l'anti-pattern déjà documenté pour l'incident du 04/08 ("aucun secret en clair").
   **Correction du processus** : ne jamais lister un secret potentiel sans le rediriger immédiatement à travers `sed -E 's/=.*/=<redacted>/'` ou équivalent, y compris pour un filtre apparemment ciblé sur un seul nom de variable. Toujours vérifier avant d'exécuter qu'une commande de diagnostic de credentials redacte systématiquement, sans exception "juste cette fois".
   **Action recommandée pour Theo** : par précaution, envisager une rotation de `TTS_API_KEY` puisqu'il a transité en clair dans les logs/transcript de cette session.
+  **Date** : 2026-08-07.
+
+- **Erreur** : le Guide d'Analyse des Performances (sections 3-4) demande de croiser impressions et CTR pour distinguer un problème de "sujet" (peu d'impressions) d'un problème de "promesse" (beaucoup d'impressions, peu de vues) — mais ces deux métriques sont **inaccessibles via l'API YouTube Analytics** pour ce compte.
+  **Cause** : tout appel `reports` avec `metrics=impressions` ou `impressionsClickThroughRate` (seul ou combiné, avec ou sans dimension `video`) échoue systématiquement avec `400 Unknown identifier (impressions) given in field parameters.metrics` — vérifié en isolant chaque cas (métrique seule, dimension `video` ou `channel==MINE` sans dimension). Ce n'est pas une erreur de syntaxe de requête : les autres métriques (`views`, `averageViewPercentage`, `subscribersGained`, `likes`, `comments`, `insightTrafficSourceType`) fonctionnent normalement sur la même requête/le même token. Ces deux métriques nécessitent une autorisation spécifique de Google au niveau du projet API (restriction connue de l'API YouTube Analytics, non liée au scope OAuth demandé — le token obtenu porte le scope large `https://www.googleapis.com/auth/youtube`, pas seulement `yt-analytics.readonly`, donc ce n'est pas un problème de scope insuffisant).
+  **Correction du processus recommandée** : chaque run de suivi doit continuer sans impressions/CTR (analyse basée sur vues, rétention, `insightTrafficSourceType`, abonnés, likes, commentaires) et le signaler explicitement dans chaque rapport plutôt que d'inventer un CTR. Action requise côté humain : demander l'accès aux métriques `impressions`/`impressionsClickThroughRate` pour le projet Google Cloud associé à `GOOGLE_CLIENT_ID` (formulaire d'éligibilité API YouTube Analytics), ou fournir un token émis par un projet qui a déjà cet accès.
+  **Date** : 2026-08-07.
+
+- **Erreur** : pour les vidéos publiées moins de ~36-40h avant le run de suivi, l'API YouTube Analytics (`reports`) retourne **0 ligne** pour cette vidéo (aucune donnée de rétention, source de trafic ou abonnés) même quand `videos.list` indique déjà 1 à 4 vues.
+  **Cause** : délai de traitement des données YouTube Analytics pour les vidéos très récentes — confirmé sur 6 vidéos publiées entre 34h et 39h avant le run (`uZPjodfm-tw`, `2rZR-pcAO3Y`, `QUG0B_lzm_o`, `wolTjnJ6nbk`, `dsPAoe8WDbs`, `YanTtTznQHU`), toutes avec des vues non nulles ou nulles côté `videos.list` mais 0 ligne côté Analytics sur la même plage de dates. Ce n'est pas un problème de filtre : une requête individuelle par vidéo (sans combiner plusieurs IDs) donne le même résultat vide.
+  **Correction du processus recommandée** : pour le checkpoint 24h (et parfois 48h si la vidéo est publiée en fin de journée), s'attendre à des données Analytics incomplètes ou absentes malgré des vues déjà comptabilisées par `videos.list` ; ne pas interpréter l'absence de ligne Analytics comme "0 activité" mais comme "donnée pas encore traitée", et le signaler clairement dans le rapport (déjà appliqué dans les rapports du 2026-08-07) plutôt que de conclure à un échec.
   **Date** : 2026-08-07.
 
 ## Historique des scores qualité (Guide de Production §12 + Guide SEO §15)
