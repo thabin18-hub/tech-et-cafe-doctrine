@@ -258,8 +258,11 @@ params:
 
   voix_off:
     provider: "Google Cloud Text-to-Speech"
-    voice_prefs: ["Studio", "Chirp3-HD"]
+    voice_name: "fr-FR-Studio-A"
+    voice_gender: "female"
     language: "fr-FR"
+    note: "Decision Theo 08/08/2026 - voix Studio (feminine) confirmee comme standard, ex-fr-FR-Studio-D (masculine). Chirp3-HD teste le meme jour pour la prononciation bilingue des noms d'outils anglais (Notion, GitHub...) et rejete a l'ecoute - conserve ci-dessous a titre de memoire, ne pas reessayer sans nouvelle demande explicite de Theo. Les voix Studio ne supportent de toute facon pas la balise SSML <lang> necessaire a la prononciation bilingue (erreur API 400 confirmee) ; Chirp3-HD ne supporte pas SSML non plus mais promettait un code-switching natif - non concluant a l'ecoute sur ce test precis."
+    voice_prefs_historique: ["Studio", "Chirp3-HD"]
 
   visuels:
     library_local: "~/bibliotheque-visuels/"
