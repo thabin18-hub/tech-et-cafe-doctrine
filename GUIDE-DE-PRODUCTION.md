@@ -99,7 +99,11 @@ Chaque contenu reçoit une note sur 100 pour chacun de ces critères : Sujet, Sc
 
 Score global calculé.
 
-**Si le score est inférieur à 90/100 : publication refusée.** Le contenu repart en amélioration.
+**Seuil de publication (mis à jour le 11/08/2026, décision Théo) : score global ≥80/100.** Le score SEO (voir GUIDE-SEO-YOUTUBE.md §15) n'est plus un gate séparé, il est un des critères qui composent ce score global unifié.
+
+**Si le score est inférieur à 80/100 : publication refusée, le contenu repart en amélioration** (nouvelle tentative, jusqu'au nombre max autorisé pour le format).
+
+**Règle de repli (nouvelle, 11/08/2026) :** si, après épuisement de toutes les tentatives autorisées, aucune n'atteint 80/100 mais que la **meilleure** d'entre elles atteint au moins **75/100**, cette meilleure tentative est publiée quand même plutôt que de ne rien publier. En dessous de 75/100 : aucune publication, quelle que soit la tentative.
 
 ### ÉTAPE 13 — PLANIFICATION
 

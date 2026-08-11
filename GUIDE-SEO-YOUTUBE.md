@@ -93,7 +93,7 @@ Avant chaque sujet important, analyser les vidéos similaires, leurs performance
 
 Chaque vidéo reçoit une note sur 100 pour : Sujet, Potentiel recherche, Titre, Miniature, Description, Positionnement, Potentiel recommandation.
 
-**Score minimum recommandé : 85/100.**
+**Mise à jour 11/08/2026 :** ce score SEO n'est plus un gate de publication séparé. Il est désormais un des critères qui composent le score global unifié (seuil 80/100, repli 75/100 sur la meilleure tentative — voir GUIDE-DE-PRODUCTION.md §12 et `PRODUCTION-CONFIG.yaml`). Continuer à le calculer et le documenter pour le suivi qualité, mais ne plus bloquer la publication dessus indépendamment du score global.
 
 ## 16. Règle finale
 

@@ -6,8 +6,8 @@
 # AUTORITE EDITORIALE (par ordre, priment sur ce fichier en cas de conflit):
 # 1. CONTEXTE-GLOBAL-TECH-CAFE.md (identite, vision, valeurs, hierarchie decision)
 # 2. CHARTE-EDITORIALE.md (ton, style, sujets autorises)
-# 3. GUIDE-DE-PRODUCTION.md (pipeline 17 etapes, score qualite seuil 90/100)
-# 4. GUIDE-SEO-YOUTUBE.md (strategie SEO, score seuil 85/100)
+# 3. GUIDE-DE-PRODUCTION.md (pipeline 17 etapes, score qualite unifie seuil 80/100, repli 75/100 sur la meilleure tentative - maj 11/08/2026)
+# 4. GUIDE-SEO-YOUTUBE.md (strategie SEO, SEO integre au score global unifie, plus de seuil separe - maj 11/08/2026)
 # 5. GUIDE-ANALYSE-PERFORMANCES.md (methode d'analyse, checkpoints 24h/48h/7j/30j)
 # 6. PROCEDURES-OPERATIONNELLES-SOP.md (SOP 01-12, regles de priorite Partie 6)
 # Ce fichier est la traduction operationnelle (technique) de cette doctrine.
@@ -20,9 +20,9 @@ metadata:
   cycle: "shorts 2x/jour (7h + 10h GMT) + video longue 1x/jour (18h GMT) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
   charte: "CONTEXTE-GLOBAL-TECH-CAFE.md"
   gates_qualite:
-    score_global_min: 90
-    score_seo_min: 85
-    comportement_si_echec: "auto-revision jusqu'a 3 tentatives, puis backlog_concepts, puis skip plutot que publier sous le seuil"
+    score_global_min: 80
+    score_global_repli_min: 75
+    comportement_si_echec: "auto-revision jusqu'au nombre max de tentatives autorise (3 pour les shorts, 2 pour la video longue). Si aucune tentative n'atteint score_global_min (80), publier quand meme la MEILLEURE tentative si son score >= score_global_repli_min (75). Sous 75: skip, jamais de publication sous ce seuil plancher. (Regle mise a jour 11/08/2026, decision Theo - remplace l'ancien 'jamais de publication sous 90')."
   erreurs_post_publication:
     niveau_1_mineure: "correction description ou commentaire"
     niveau_2_importante: "correction visible aupres du public"
@@ -276,6 +276,24 @@ params:
 
 # === CHANGELOG ===
 changelog:
+  - date: "2026-08-11"
+    version: "5.2"
+    change: |
+      Seuil qualite unifie a 80/100 (au lieu de 90/100 global + 85/100 SEO
+      separe), avec regle de repli: si aucune tentative n'atteint 80,
+      publier quand meme la meilleure si elle atteint au moins 75/100.
+      Decision Theo suite a 2 incidents le 11/08: (1) short #1 rejete 3x
+      malgre un score en progression constante (81,5 -> 87,7 -> 89,0),
+      jamais publie faute d'atteindre 90; (2) conflit de seuil entre le
+      prompt de la routine video longue (70/100) et cette doctrine (90/100)
+      - aucune video longue n'avait jamais atteint 90/100 historiquement
+      (06/08: 79, 07/08: 89,1 apres corrections). Le score SEO cesse d'etre
+      un gate separe et devient un des criteres du score global unifie.
+      S'applique aux shorts ET a la video longue, memes seuils (plus de
+      distinction 90/85/70 par format).
+    author: "Claude (a la demande de Theo)"
+    status: "Deploye"
+
   - date: "2026-08-05"
     version: "5.1"
     change: |
