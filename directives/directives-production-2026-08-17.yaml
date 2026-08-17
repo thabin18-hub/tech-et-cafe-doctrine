@@ -1,0 +1,109 @@
+# Directives Production - Semaine du 17/08/2026
+# Generees lundi 17/08 9h GMT (SOP 11 - Reunion strategique hebdomadaire)
+# Sources: rapport officiel (rapports/rapport-2026-08-10.{docx,pdf,pptx} - voir
+#   note "anomalie de nommage" ci-dessous) + 82 rapports de suivi (suivi/*.md,
+#   07/08-16/08) + BASE-DE-CONNAISSANCES.md
+# Lues par les routines de production shorts (7h/10h GMT) et video longue (18h GMT)
+
+semaine_du: "2026-08-17"
+
+# === DATA SEMAINE PRECEDENTE (10/08 - 16/08) ===
+data_semaine_precedente:
+  period: "10/08 - 16/08"
+  abonnes_gagnes: 3
+  abonnes_total: 12
+  progression_monetisation: "12/1000 abos (1.2%)"
+  vues_cumulees_chaine: 3375
+  ctr_moyen: "NON DISPONIBLE - l'API YouTube Analytics rejette impressions/CTR pour ce compte ('Unknown identifier'), pour toute la duree de vie de la chaine. Blocage technique a resoudre avec Theo, pas un manque de contenu."
+  retention_moyenne: "44.7% (chiffre officiel, echantillon fiable n=8, videos avec Analytics non-vide a >=24h). Note: une moyenne-de-moyennes sur les checkpoints individuels donne ~61-64%, mais gonflee par des echantillons de 1 a 6 vues par video (ex: 204%, 111% de retention sur n=1-2) - ne pas utiliser cette 2e valeur comme cible."
+  commentaires_total: 0
+  echantillon_note: "82 rapports de suivi lus (07/08-16/08). Aucun commentaire spectateur enregistre sur toute la periode, ni sur toute l'historique de la chaine - aucune remontee qualitative (questions/demandes) disponible."
+  anomalie_rapport: "rapports/rapport-2026-08-10.docx est mal nomme: son contenu indique 'Semaine du 10 au 16 aout 2026, genere le 16 aout 2026' - il couvre en realite la semaine qui vient de se terminer, pas la semaine du 03-09/08 que son nom suggere. A corriger cote routine rapport (nommer par le dimanche de fin de semaine, ex: rapport-2026-08-16.*)."
+
+# === CE QUI MARCHE (confirme sur donnees reelles 10-16/08) ===
+continuer:
+  - "Hook 'marque/labo IA reconnu + benefice personnel direct chiffre des la 1ere phrase': '1400 outils qui bosse pour toi' (mva2zihSICA, 83.7% retention, 26 vues, meilleur taux d'abo de la semaine), 'tourne direct sur ton PC' (TgH2d7zU6JQ, 77.3% retention, like+abo+share sur 25-33 vues), '7x plus petite' (EfM3q5Hp9KA, 129 vues, meilleur volume de la semaine). Pattern confirme independamment 6 fois."
+  - "Format Short court (45-55s) cible sur un seul benefice utilisateur immediat - aucun signal contraire cette semaine, pas de raison de changer la duree."
+  - "Nouveau signal a surveiller (pas encore une regle): 2 cas de 'retention >100%' (effet replay) sur des sujets de marque moins mainstream (Qwen/Alibaba: iAgs4ss3gO0, 101.8% confirme sur cycle complet 24h-48h-7j; Meta Muse Code: rRpLlGpQoT0, 204.4% sur n=6). Suggere que la marque moins connue plafonne la decouverte initiale mais pas l'engagement post-clic - a tester deliberement (voir tests_a_mener)."
+
+arreter:
+  - "Sujets institutionnels/business sans framing IA explicite dans le titre (ex: 'startup licorne en 2 ans' - wolTjnJ6nbk, 3.61% retention, quasi pire score de la chaine, 100% trafic recherche/0% Shorts flux). 3e confirmation independante de ce pattern deja identifie la semaine du 03/08."
+  - "Titres prix/urgence sans benefice personnel explicite (ex: 'l'IA la moins chere au monde... et ca ne va pas durer' - lARzLbhyPeQ: retention correcte 45.2% mais ZERO engagement - 0 like, 0 commentaire, 0 partage, 0 abo sur 37-40 vues malgre 70% de diffusion Shorts). Le prix seul ne suffit pas, il faut un benefice personnel explicite comme dans les videos qui marchent."
+  - "Publication de video longue en dehors du creneau documente 18:00 GMT: 4 videos longues publiees hors creneau (09:30-10:00 UTC au lieu de 18:00) cette semaine ont fait 0 vue absolue (YqUmf9QEltE, 6VynsMUfd6M, 42-QhuX2xmU, bihb_tCYC5U), confirme par videos.list (pas un delai de traitement Analytics). Ce n'est pas un probleme de qualite: bihb_tCYC5U avait un score de production de 84.9/100. Probleme de planification/distribution a corriger techniquement, escalade a Theo 5 fois (11,12,13,14,16/08) sans resolution confirmee - a traiter en priorite avant la production de la semaine."
+  - "Publication de contenus doublons sans arbitrage rapide: la paire GPT-5.6-Cyber (qpVmnWGnGBc/3TlNMHcm8vs, meme sujet, tous deux publics depuis le 12/08, ~108 vues combinees et pas de facon de savoir si elles se cannibalisent) et le trio '10 problemes de maths' (OGxS1ui7zaE/hrMYwsDSP1A, versions buguees toujours publiques, version finale corrigee e17W5nWaciU introuvable via l'API) restent non resolus malgre plusieurs escalades. Le controle anti-doublon existant a echoue a bloquer la mise en public - a renforcer, et tout doublon detecte doit etre arbitre (depublier l'un des deux) sous 24h, pas laisse en l'etat plusieurs jours."
+
+# === PARAMETRES PRODUCTION ===
+angles_privilegier:
+  - "Marque/labo IA reconnu + benefice personnel direct et chiffre des la 1ere phrase du hook (ex: 'X outils qui bossent pour toi', '7x plus petit', 'tourne sur ton PC')"
+  - "Agents IA connectes a des outils / IA tournant en local chez l'utilisateur (pattern ChatGPT Work / Meta Muse Glimmer)"
+  - "Securite IA avec benefice concret et mesurable pour l'utilisateur (pattern Shieldstral)"
+  - "A tester deliberement: labos IA moins mainstream (Alibaba/Qwen et similaires) avec la meme structure de hook - signal de forte retention post-clic malgre decouverte initiale plus faible"
+
+angles_eviter:
+  - "Crypto/blockchain"
+  - "Memes/viral culture"
+  - "Actualite institutionnelle/business sans framing IA explicite en titre (levees de fonds, licornes, changements de poste sans impact produit)"
+  - "Titre uniquement base sur prix/urgence sans benefice personnel direct explicite pour le spectateur"
+
+duree_cible: "45-55s"
+hook_strategy: "nommer une marque ou un labo IA reconnaissable + benefice personnel direct et chiffre des la 1ere phrase (ex: '1400 outils qui bossent pour toi', '7x plus petite', 'tourne direct sur ton PC'). Ne jamais s'appuyer sur un chiffre/prix seul sans benefice explicite pour le spectateur - confirme cette semaine comme insuffisant pour generer de l'engagement (lARzLbhyPeQ)."
+retention_target: "45% (base sur l'echantillon fiable officiel n=8, prudence sur les moyennes calculees a partir d'echantillons de 1-6 vues qui donnent des chiffres non generalisables jusqu'a 100-200%)"
+
+affiliation_priority:
+  - "tech books & courses"
+  - "AI tools freemium"
+
+cpm_target: "1.8"
+cpm_note: "Aucune donnee CPM disponible dans les rapports de suivi analyses cette semaine (comme le CTR, possible restriction API supplementaire a verifier). Cible precedente conservee faute de nouvelle donnee - a ne pas traiter comme confirmee."
+
+# === TESTS A MENER CETTE SEMAINE ===
+tests_a_mener:
+  - "Hypothese: respecter strictement le creneau documente 18:00 GMT pour toute video longue (aucune publication hors creneau) resout le probleme de 0 vue absolue observe sur 4/4 videos longues publiees hors creneau cette semaine. Objectif: sortir du 0-vue absolu qui touche la totalite des videos longues mal planifiees. Mesure de reussite: sur les 5 prochaines videos longues publiees strictement a 18:00 GMT, au moins 4/5 doivent afficher des vues > 0 a 24h (verification videos.list, pas seulement Analytics), avec verification manuelle du statut de publication reel dans YouTube Studio."
+  - "Hypothese: renforcer explicitement le CTA d'abonnement sur les Shorts suivant le hook gagnant (marque+benefice) augmente le taux de conversion abonnes, actuellement tres faible (2 abonnes sur ~40 videos suivies cette semaine, soit ~5%). Objectif: ameliorer ce taux de conversion sans degrader la retention. Mesure de reussite: comparer le taux d'abonnement des 5 prochaines videos avec CTA renforce vs la baseline ~5% de cette semaine, sur au moins 48h de recul chacune."
+  - "Hypothese (nuance a partir du signal 'replay' de cette semaine): les sujets de marque IA moins mainstream (Alibaba/Qwen, labs moins connus) plafonnent la decouverte initiale (vues, partages) mais pas l'engagement post-clic (retention parfois >100%). Objectif: verifier si ce pattern se reproduit sur un echantillon plus large. Mesure de reussite: sur 3 nouvelles videos utilisant une marque IA moins mainstream avec la meme structure de hook que les videos gagnantes, retention 7 jours >= 60% sur au moins 2/3, independamment du volume de vues absolu."
+
+notes: |
+  Semaine du 10-16/08: 82 rapports de suivi analyses (07/08-16/08, echantillon
+  large et recul suffisant - donnees jugees exploitables, pas de repli sur le
+  framework par defaut). +3 abonnes (total 12/1000 objectif YPP, 1.2%), 3375
+  vues cumulees chaine. CTR toujours indisponible (restriction API confirmee,
+  pas un probleme de contenu). Retention: 44.7% sur l'echantillon fiable
+  officiel (n=8) - prudence sur les moyennes de petits echantillons qui
+  donnent des chiffres non fiables jusqu'a 200%. Zero commentaire enregistre
+  sur toute l'historique de la chaine: aucune remontee qualitative spectateur
+  disponible, c'est en soi un signal a surveiller (chaine encore trop petite
+  pour generer de l'engagement organique en commentaires).
+
+  4 points operationnels a signaler a Theo, hors perimetre de ces directives
+  (ciblage editorial uniquement, ces problemes sont structurels/techniques):
+  1. 4 videos longues publiees hors creneau 18:00 GMT documente = 0 vue
+     absolue chacune, alors qu'au moins une avait un score de production de
+     84.9/100 (donc pas un probleme de qualite editoriale). Escalade sans
+     resolution confirmee depuis le 11/08.
+  2. 2 incidents de contenu duplique non arbitres depuis plusieurs jours
+     (paire GPT-5.6-Cyber, trio "10 problemes de maths" avec version finale
+     introuvable) - le controle anti-doublon existant n'a pas empeche la
+     mise en public.
+  3. Aucun rapport de suivi n'existe pour le 15/08 (trou de donnees dans le
+     pipeline de suivi quotidien).
+  4. rapports/rapport-2026-08-10.docx est mal nomme (contenu = semaine
+     10-16/08, generee le 16/08) - a corriger cote routine rapport pour la
+     coherence du pipeline dimanche->lundi.
+
+  Rappel de gouvernance (verifie dans GUIDE-DE-PRODUCTION.md §12 et
+  GUIDE-SEO-YOUTUBE.md §15): le seuil de publication en vigueur depuis le
+  11/08/2026 est un score global unifie >=80/100 (repli 75/100 sur la
+  meilleure tentative), et non plus 90/100 + 85/100 SEO separe. Ces
+  directives n'abaissent ce seuil en aucun cas - elles n'affinent que le
+  ciblage (angles, duree, hook, affiliation), conformement a la hierarchie
+  de decision (exactitude > valeur spectateur > qualite editoriale > clarte
+  > performance YouTube > rapidite de publication).
+
+# === METADATA ===
+metadata:
+  version: "3.0"
+  generated_at: "2026-08-17T09:00:00Z"
+  generated_by: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
+  algorithm: "analyse des 82 rapports de suivi (07/08-16/08) + rapport officiel 10-16/08 + BASE-DE-CONNAISSANCES.md"
+  manual_override: false
+  next_update: "2026-08-24"

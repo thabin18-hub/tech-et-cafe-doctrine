@@ -16,7 +16,7 @@
 metadata:
   version: "5.0"
   framework: "doctrine complete Directeur de Production IA (6 documents fondateurs)"
-  derniere_maj: "2026-08-02T22:10:00Z"
+  derniere_maj: "2026-08-17T09:00:00Z"
   cycle: "shorts 2x/jour (7h + 10h GMT) + video longue 1x/jour (18h GMT) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
   charte: "CONTEXTE-GLOBAL-TECH-CAFE.md"
   gates_qualite:
@@ -97,19 +97,23 @@ directives:
       - "IA & fondateurs tech"
       - "Actualite tech breakingn news"
       - "Trends IA generative"
-      - "Actualites des grands labs IA (Anthropic, OpenAI, Google DeepMind) avec angle 'ce que ca change pour toi' plutot que purement factuel/financier (mis a jour 03/08, donnees reelles semaine 1: 971/760/438 vues pour les videos nommant un acteur majeur + chiffre concret, vs 0-1 vue pour les sujets institutionnels/financiers abstraits)"
+      - "Marque/labo IA reconnu + benefice personnel direct et chiffre des la 1ere phrase du hook (mis a jour 17/08, confirme independamment 6 fois semaine 10-16/08: 'X outils qui bossent pour toi', '7x plus petite', 'tourne direct sur ton PC')"
+      - "Agents IA connectes a des outils / IA tournant en local chez l'utilisateur (pattern ChatGPT Work / Meta Muse Glimmer, semaine 10-16/08)"
+      - "A tester: labos IA moins mainstream (Alibaba/Qwen etc) - retention post-clic >100% observee 2x malgre decouverte initiale plus faible (semaine 10-16/08)"
     angles_eviter:
       - "Crypto/blockchain"
       - "Memes/viral culture"
-      - "Actualite purement financiere/contractuelle sans impact utilisateur explicite (contrats gouvernementaux, levees de fonds sans contexte produit, changements de poste) - mis a jour 03/08, 0-1 vue sur 3 exemples semaine 1, echantillon encore petit a confirmer"
+      - "Actualite purement financiere/contractuelle sans impact utilisateur explicite (contrats gouvernementaux, levees de fonds sans contexte produit, changements de poste)"
+      - "Actualite institutionnelle/business sans framing IA explicite en titre (mis a jour 17/08, 3e confirmation: retention 3.6%, quasi pire score de la chaine)"
+      - "Titre uniquement base sur prix/urgence sans benefice personnel direct explicite (mis a jour 17/08: retention correcte mais zero engagement observe - 0 like/commentaire/partage/abo)"
     duree_cible: "45-55s"
-    hook_strategy: "clarte et pertinence d'abord, surprise/contre-intuitif si ca sert la pedagogie (jamais du putaclic qui trahit le contenu). Pattern semaine 1: nommer l'acteur IA majeur des les 3 premieres secondes + chiffre concret + benefice/impact pour le spectateur."
-    retention_target: "40%"
+    hook_strategy: "nommer une marque ou un labo IA reconnaissable + benefice personnel direct et chiffre des la 1ere phrase (mis a jour 17/08, semaine 10-16/08: '1400 outils qui bossent pour toi', '7x plus petite', 'tourne direct sur ton PC'). Ne jamais s'appuyer sur un chiffre/prix seul sans benefice explicite pour le spectateur."
+    retention_target: "45% (mis a jour 17/08, base sur echantillon fiable officiel n=8 - prudence sur les moyennes de petits echantillons non generalisables)"
     affiliation_priority:
       - "tech books & courses"
       - "AI tools freemium"
     cpm_target_min: "1.5"
-    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite. Voir directives/directives-production-2026-08-03.yaml pour l'analyse complete semaine 1 (echantillon encore petit, hypotheses a confirmer)."
+    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite (score global unifie >=80/100, repli 75/100 - GUIDE-DE-PRODUCTION.md maj 11/08/2026, ne remplace plus l'ancien seuil 90/85 mentionne dans certains prompts plus anciens). Voir directives/directives-production-2026-08-17.yaml pour l'analyse complete de la semaine 10-16/08 (82 rapports de suivi + rapport officiel; CTR indisponible pour restriction API, 0 commentaire enregistre sur toute l'historique de la chaine)."
 
 # === BACKLOG EVERGREEN ===
 # Concepts rechauffables si veille echoue ou pour complementer
