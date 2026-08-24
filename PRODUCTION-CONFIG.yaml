@@ -16,7 +16,7 @@
 metadata:
   version: "5.0"
   framework: "doctrine complete Directeur de Production IA (6 documents fondateurs)"
-  derniere_maj: "2026-08-17T09:00:00Z"
+  derniere_maj: "2026-08-24T09:00:00Z"
   cycle: "shorts 2x/jour (7h + 10h GMT) + video longue 1x/jour (18h GMT) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
   charte: "CONTEXTE-GLOBAL-TECH-CAFE.md"
   gates_qualite:
@@ -94,26 +94,27 @@ directives_hebdomadaire:
 directives:
   default:
     angles_privilegier:
-      - "IA & fondateurs tech"
-      - "Actualite tech breakingn news"
-      - "Trends IA generative"
-      - "Marque/labo IA reconnu + benefice personnel direct et chiffre des la 1ere phrase du hook (mis a jour 17/08, confirme independamment 6 fois semaine 10-16/08: 'X outils qui bossent pour toi', '7x plus petite', 'tourne direct sur ton PC')"
-      - "Agents IA connectes a des outils / IA tournant en local chez l'utilisateur (pattern ChatGPT Work / Meta Muse Glimmer, semaine 10-16/08)"
-      - "A tester: labos IA moins mainstream (Alibaba/Qwen etc) - retention post-clic >100% observee 2x malgre decouverte initiale plus faible (semaine 10-16/08)"
+      - "Marque/labo IA reconnu + benefice personnel direct et chiffre des la 1ere phrase du hook, AVEC le referentiel du chiffre explicite dans la phrase suivante (mis a jour 24/08: un chiffre sans base de comparaison cause un decrochage de -41% d'audience avant la 9e seconde, mesure sur GLM-5.3/8ET23DKEqeI le 20/08)"
+      - "Actualite chaude avec effet de surprise (nouveaute produit, annonce inattendue) - gabarit des 3 meilleures videos de la semaine 17-23/08 (Suno Studio 2.0, annonce pub ChatGPT, Grok 4.6)"
+      - "Securite IA ou la faille/le risque est decouvert ou traite par une IA, distinct de la cybersecurite generale hors ligne editoriale (confirme 18-23/08, 3TlNMHcm8vs: 2 abonnes generes, l'un des meilleurs taux de conversion de la chaine)"
+      - "A tester: sujets ou le spectateur possede deja le produit + changement subi + date ferme annoncee (signal fort n=1, TV8jLECHVb0 20/08: meilleure courbe de retention jamais mesuree sur la chaine)"
+      - "A tester: creation IA (musique confirme, etendre a image/video/voix) - conversion abonnes 1.6% contre 0.46% moyenne chaine sur le seul cas mesure (Suno Studio 2.0, 23/08)"
+      - "Labos IA moins mainstream (Alibaba/Qwen, GLM) en format Short uniquement (mis a jour 24/08: GLM-5.3 correct en Short 49.5% retention, mais le meme type de sujet en format long reste faible 21.2% tant que la video longue n'a pas resolu son probleme de distribution)"
     angles_eviter:
       - "Crypto/blockchain"
       - "Memes/viral culture"
-      - "Actualite purement financiere/contractuelle sans impact utilisateur explicite (contrats gouvernementaux, levees de fonds sans contexte produit, changements de poste)"
-      - "Actualite institutionnelle/business sans framing IA explicite en titre (mis a jour 17/08, 3e confirmation: retention 3.6%, quasi pire score de la chaine)"
-      - "Titre uniquement base sur prix/urgence sans benefice personnel direct explicite (mis a jour 17/08: retention correcte mais zero engagement observe - 0 like/commentaire/partage/abo)"
-    duree_cible: "45-55s"
-    hook_strategy: "nommer une marque ou un labo IA reconnaissable + benefice personnel direct et chiffre des la 1ere phrase (mis a jour 17/08, semaine 10-16/08: '1400 outils qui bossent pour toi', '7x plus petite', 'tourne direct sur ton PC'). Ne jamais s'appuyer sur un chiffre/prix seul sans benefice explicite pour le spectateur."
-    retention_target: "45% (mis a jour 17/08, base sur echantillon fiable officiel n=8 - prudence sur les moyennes de petits echantillons non generalisables)"
+      - "Actualite institutionnelle/business sans framing IA explicite en titre"
+      - "Titre uniquement base sur prix/urgence ou simple constat factuel sans benefice personnel direct ni action pour le spectateur (mis a jour 24/08: 0 engagement confirme a nouveau sur cycle complet 7 jours, QijXoRgRnb4)"
+      - "Chiffre-choc en ouverture de hook sans son referentiel immediat dans la phrase suivante (nouveau 24/08)"
+      - "Video longue publiee hors du creneau documente 18:00 GMT (nouveau 24/08, priorite maximale: 11 cas confirmes independamment depuis le 09/08, 0 vue quasi systematique, escalade a Theo 15 fois sans resolution confirmee - point operationnel bloquant, voir directives/directives-production-2026-08-24.yaml)"
+    duree_cible: "45-58s"
+    hook_strategy: "nommer une marque ou un labo IA reconnaissable + benefice personnel direct et chiffre des la 1ere phrase, ET faire suivre immediatement ce chiffre de son referentiel explicite dans la phrase suivante (mis a jour 24/08, ex. '6x mieux que GPT-5 sur le code' plutot que '6x mieux' seul). Ne jamais s'appuyer sur un chiffre/prix seul ni sur une simple annonce factuelle sans benefice ou action concrete pour le spectateur."
+    retention_target: "45% pour les Shorts (mis a jour 24/08, moyenne mesuree semaine 17-23/08: 42.8%, coherent). Pas de cible chiffree pour la video longue tant que le probleme de distribution hors-creneau n'est pas resolu - la retention n'y est pas le facteur limitant actuellement (retention longue 9.1% vs Shorts 42.8%, mais quasi 0 vue quel que soit le contenu quand publiee hors creneau)."
     affiliation_priority:
       - "tech books & courses"
       - "AI tools freemium"
-    cpm_target_min: "1.5"
-    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite (score global unifie >=80/100, repli 75/100 - GUIDE-DE-PRODUCTION.md maj 11/08/2026, ne remplace plus l'ancien seuil 90/85 mentionne dans certains prompts plus anciens). Voir directives/directives-production-2026-08-17.yaml pour l'analyse complete de la semaine 10-16/08 (82 rapports de suivi + rapport officiel; CTR indisponible pour restriction API, 0 commentaire enregistre sur toute l'historique de la chaine)."
+    cpm_target_min: "1.8"
+    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite (score global unifie >=80/100, repli 75/100 - GUIDE-DE-PRODUCTION.md maj 11/08/2026, ne remplace plus l'ancien seuil 90/85 mentionne dans certains prompts plus anciens). Voir directives/directives-production-2026-08-24.yaml pour l'analyse complete de la semaine 17-23/08 (~90 rapports de suivi + rapport officiel; CTR toujours indisponible pour restriction API, 0 commentaire enregistre sur toute l'historique de la chaine, +2 abonnes nets sur la semaine)."
 
 # === BACKLOG EVERGREEN ===
 # Concepts rechauffables si veille echoue ou pour complementer
