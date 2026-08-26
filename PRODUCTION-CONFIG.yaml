@@ -1,6 +1,6 @@
 # PRODUCTION CONFIG - Tech & Cafe
 # Mis a jour automatiquement par routine "Reunion strategique hebdomadaire" (lundi 9h GMT)
-# Lu par routines production: shorts (7h + 10h GMT), video longue (18h GMT),
+# Lu par routines production: shorts (02h00 + 02h03 UTC), video longue (02h06 UTC),
 # suivi performance (20h GMT quotidien)
 #
 # AUTORITE EDITORIALE (par ordre, priment sur ce fichier en cas de conflit):
@@ -17,7 +17,8 @@ metadata:
   version: "5.0"
   framework: "doctrine complete Directeur de Production IA (6 documents fondateurs)"
   derniere_maj: "2026-08-24T09:00:00Z"
-  cycle: "shorts 2x/jour (7h + 10h GMT) + video longue 1x/jour (18h GMT) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
+  # Horaires mis a jour 26/08/2026 suite a la demande de Theo du 23/08 (bloc 2h UTC) - ce champ ne fait PAS foi en cas de doute, le cron reel du trigger (visible via list_triggers) est toujours la source de verite, ce fichier peut se perimer entre deux mises a jour manuelles.
+  cycle: "shorts 2x/jour (02h00 + 02h03 UTC) + video longue 1x/jour (02h06 UTC) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
   charte: "CONTEXTE-GLOBAL-TECH-CAFE.md"
   gates_qualite:
     score_global_min: 80
@@ -252,9 +253,9 @@ video_longue:
 # === PARAMETRES GLOBAUX ===
 params:
   production_times:
-    - "short #1: 07:00 GMT"
-    - "short #2: 10:00 GMT - doit eviter le sujet du short #1 du meme jour"
-    - "video longue: 18:00 GMT"
+    - "short #1: 02:00 UTC"
+    - "short #2: 02:03 UTC - doit eviter le sujet du short #1 du meme jour"
+    - "video longue: 02:06 UTC"
   output_dir: "videos_prod/YYYY-MM-DD/"
   output_dir_longue: "videos_prod_longue/YYYY-MM-DD/"
   metadata_storage: "repo thabin18-hub/echcafe-visual-library"
