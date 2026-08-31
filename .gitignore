@@ -3,3 +3,4 @@ bibliotheque-visuels/
 
 # Fichiers systeme
 .DS_Store
+.env
