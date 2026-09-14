@@ -4,3 +4,7 @@ bibliotheque-visuels/
 # Fichiers systeme
 .DS_Store
 .env
+
+# Environnement Python local (generation de rapports) et scripts de travail temporaires
+.venv/
+scripts_tmp/
