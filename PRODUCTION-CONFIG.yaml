@@ -16,7 +16,7 @@
 metadata:
   version: "5.0"
   framework: "doctrine complete Directeur de Production IA (6 documents fondateurs)"
-  derniere_maj: "2026-08-24T09:00:00Z"
+  derniere_maj: "2026-09-28T09:00:00Z"
   # Horaires mis a jour 26/08/2026 suite a la demande de Theo du 23/08 (bloc 2h UTC) - ce champ ne fait PAS foi en cas de doute, le cron reel du trigger (visible via list_triggers) est toujours la source de verite, ce fichier peut se perimer entre deux mises a jour manuelles.
   cycle: "shorts 2x/jour (02h00 + 02h03 UTC) + video longue 1x/jour (02h06 UTC) + suivi performance 1x/jour (20h GMT) + reunion strategique hebdo (lundi 9h GMT)"
   charte: "CONTEXTE-GLOBAL-TECH-CAFE.md"
@@ -95,29 +95,27 @@ directives_hebdomadaire:
 directives:
   default:
     angles_privilegier:
-      - "Personnalite/dirigeant IA en rupture ou en aveu (nouveau 31/08, confirme sur -A3JYclGdag: ~83/100 au 48h, retention 59.62% sans decrochage precoce, conversion abonnes 5.26% - l'un des meilleurs scores jamais mesures sur la chaine ; et WXDjghr5xEM: 130 vues/59h, profil de retention croissant en fin de video)"
-      - "Friction d'usage produit resolue, benefice direct sans chiffre ni marque tierce (nouveau 31/08, confirme sur nd_k65RrXH8: ~73/100, retention 76.89%, reprise Shorts 85.5%)"
-      - "Marque/labo IA reconnu + benefice personnel direct et chiffre des la 1ere phrase du hook, AVEC le referentiel du chiffre explicite dans la phrase suivante (regle du 20/08, toujours en vigueur, non contredite au 31/08)"
-      - "Titre qui leve une objection implicite (cout, complexite, disponibilite) plutot qu'un titre purement descriptif (nouveau 31/08, confirme sur 3sfKROilJ3Q '(Meme Gratuit)': seule video encore en croissance a 7j au sein d'un groupe de 4 quasi-doublons, retention 51.71%)"
-      - "A tester avec prudence (mis a jour 31/08, resultats mitiges): sujets ou le spectateur possede deja le produit + changement subi + date ferme annoncee - dxjOMygjD98 confirme l'absence de decrochage precoce mais reste sous la cible de retention (40.27%), dYNLzfArczE infirme l'hypothese (19.36%, decrochage des la 1ere seconde). Ne plus traiter comme une regle acquise (etait fonde sur un seul cas, TV8jLECHVb0)."
-      - "Sujets IA de niche a fort trafic recherche (modeles locaux, outils specialises) en format long : trafic recherche durable confirme 2 fois (Bi6sB9CLESg 87.5%, yeyIL4zOHP8 90.9%) malgre un volume faible - ne pas abandonner, associer a un CTA d'abonnement renforce"
-      - "Securite IA ou la faille/le risque est decouvert ou traite par une IA, distinct de la cybersecurite generale hors ligne editoriale (regle maintenue, pas de nouveau cas la semaine du 24-30/08)"
+      - "Marque IA majeure reconnue + echeance datee et verifiable annoncee dans le titre (nouveau 28/09, confirme sur s10x5nCdL_E: 997 vues temps reel, le meilleur volume brut de la semaine 21-27/09, 47.05% retention, 96.5% trafic SHORTS)"
+      - "Chiffre en tete du hook AVEC son referentiel explicite dans la phrase immediatement suivante (regle du 20/08, toujours en vigueur - desormais le gabarit de reference prioritaire: confirme le 28/09 sur XsT_PBX1iRI, 738 vues, 60.99% retention, 0.95% conversion abonnes, plus du double de la moyenne chaine 0.46% - seul cas de la semaine combinant distribution forte ET conversion)"
+      - "Securite IA ou la faille/le risque est decouvert ou traite par une IA elle-meme, distinct de la cybersecurite generale hors ligne editoriale (2e cas confirme 28/09 sur DNB2tI0Rjj4: 115 vues, 53.99% retention, 5.3% likes, apres 3TlNMHcm8vs - a formaliser en veille quotidienne SOP01)"
+      - "A tester (nouveau 28/09, un seul cas a ce jour): structure 'statistique avant/apres + frustration IA quotidienne resolue' (nd_k65RrXH8, 65.91% retention au checkpoint 30j) - candidat pour generalisation a d'autres irritants IA quotidiens (latence, hallucinations, interruptions de conversation)"
+      - "Maintenu sans nouvelle donnee au 28/09 (aucun cas produit ni contredit la semaine du 21-27/09, ne pas abandonner faute de test recent): personnalite/dirigeant IA en rupture ou en aveu (confirme le 31/08 sur -A3JYclGdag et WXDjghr5xEM) ; titre qui leve une objection implicite (cout, complexite, disponibilite) ; sujets IA de niche a fort trafic recherche en format long"
     angles_eviter:
       - "Crypto/blockchain"
       - "Memes/viral culture"
-      - "Actualite institutionnelle/business sans framing IA explicite en titre (mis a jour 31/08: confirme comme l'une des pires categories de la chaine sur cycle complet 30 jours, CO-80p5hffs ~13/100, distribution elle-meme en echec, pas seulement l'engagement)"
-      - "Titre uniquement base sur prix/urgence ou simple constat factuel sans benefice personnel direct ni action pour le spectateur (mis a jour 31/08: 3e confirmation independante, wu2pGpPsxfM, 0 abonne sur 61 vues malgre 83.6% de trafic Shorts)"
-      - "Chiffre-choc en ouverture de hook sans son referentiel immediat dans la phrase suivante (regle du 20/08, maintenue)"
-      - "Meme sujet couvert par un Short ET une video longue le meme jour avec un chiffre different dans le titre (nouveau 31/08: RrCPeKeGCoA/_MXn2b0UiI4, 28/08, '12.9' vs '13 milliards' pour le meme rachat Nvidia/Hugging Face - risque direct pour l'Exactitude, priorite n°1 de la hierarchie de decision)"
-      - "Video longue publiee hors du creneau documente 18:00 GMT (mis a jour 31/08, PRIORITE MAXIMALE INCHANGEE: 18-19 cas cumules depuis le 09/08 - 15e/16e/17e cas confirmes independamment durant la semaine du 24-30/08, dont 2 cas de blocage TOTAL sur cycle complet 7 jours, RtxQmRZAOrE et ETAk0BZbTpw, 0 vue absolue du 24h au 7j. Root cause technique confirmee le 25/08: le trigger de production video longue trig_013BuZUeGuBZqdSuGmRhk5HQ tourne sur un cron '6 2 * * *' (02:06 UTC) au lieu du creneau doctrinal 18:00 GMT - correctif propose (cron_expression='0 18 * * *') toujours non applique 22 jours apres le premier signalement du 09/08. Escalade Theo 18+ fois sans resolution confirmee. Voir directives/directives-production-2026-08-31.yaml, section blocage_operationnel_prioritaire.)"
-    duree_cible: "45-58s"
-    hook_strategy: "nommer une marque/labo IA reconnaissable OU une personnalite/dirigeant IA + benefice ou tension narrative directe des la 1ere phrase. Si un chiffre est utilise en ouverture, toujours faire suivre immediatement son referentiel explicite dans la phrase suivante (regle du 20/08, maintenue). Test en cours depuis le 27/08 (SOP04): delivrer le benefice concret avant la 5e seconde plutot qu'apres une mise en contexte de marque/evenement, en reponse au decrochage precoce (<7-9s) confirme sur 13+ Shorts disjoints depuis le 20/08 - resultats attendus la semaine du 31/08."
-    retention_target: "45% pour les Shorts (mis a jour 31/08, moyenne mesuree semaine 24-30/08: ~45.5% sur 23 videos avec donnee exploitable, coherent et en legere hausse vs 42.8% la semaine precedente). Pas de cible chiffree pour la video longue tant que le probleme de distribution hors-creneau n'est pas resolu (retention mesuree ~8% cette semaine, echantillons trop petits n=1 a n=11 pour etre un signal de contenu fiable)."
+      - "Actualite institutionnelle/business sans framing IA explicite en titre (maintenue au 28/09, aucun nouveau cas ni contre-exemple la semaine du 21-27/09 - confirmee le 31/08 comme l'une des pires categories de la chaine sur cycle complet 30 jours, CO-80p5hffs ~13/100)"
+      - "Chiffre-choc en ouverture de hook sans son referentiel immediat dans la phrase suivante (regle du 20/08, reconfirmee une nouvelle fois le 28/09 sur qplzaGsStFg: decrochage retention (RRP 0.101) des 5.2 secondes)"
+      - "Meme sujet publie 2 fois la meme semaine sans espacement ni differenciation de titre (mis a jour 28/09, cas AGGRAVE: doublon 'Gemini Live Avatar' du 26/09, FLRbQoDjSQk vs Jxm9NQ8k-f0, les DEUX versions publiees PUBLIQUES simultanement - ecart de 4x en vues a 24h, 393 vs 94 - contre un seul jumeau public lors du precedent cas ChatGPT/Word du 21/09 ; cause structurelle identifiee: SOP04 ne verifie l'anti-doublon que contre BASE-DE-CONNAISSANCES.md, jamais contre les dossiers videos_prod/<date>/ des runs freres en cours le meme jour - correction toujours non appliquee, demandee depuis le 31/08)"
+      - "Video longue publiee hors du creneau documente 18:00 GMT (mis a jour 28/09, PRIORITE MAXIMALE INCHANGEE, 4e escalade: les 5 videos longues de la semaine 21-27/09 sont TOUTES hors creneau, 0-8 vues chacune. Root cause reevaluee: le trigger trig_0128y43fLzq5L7g7A3VmYSK8 (ex-trig_013BuZUeGuBZqdSuGmRhk5HQ) tourne toujours sur le cron '6 2 * * *' (02:06 UTC, verifie via list_triggers le 25/09) mais les publications reelles sortent entre 09:55 et 13:00 UTC - un ecart de 6 a 11h entre declenchement du trigger et publication YouTube reelle, non diagnostique a ce jour, distinct du seul probleme de cron deja documente. Voir directives/directives-production-2026-09-28.yaml, section blocage_operationnel_prioritaire.)"
+      - "A deprioriser avec prudence (nouveau 28/09, 2e cas defavorable, echantillon encore insuffisant pour en faire une regle ferme): sujet 'fonctionnalite smartphone' sans marque IA reconnue ni chiffre dans le titre (8_8IbPF8O48, 6 vues a 48h)"
+    duree_cible: "48-55s"
+    hook_strategy: "Deux structures prioritaires egales au 28/09: (1) nommer une marque IA majeure reconnue + une echeance datee et verifiable des la 1ere phrase (meilleur volume brut mesure la semaine du 21-27/09) ; (2) un chiffre en ouverture TOUJOURS suivi immediatement de son referentiel explicite dans la phrase suivante (regle du 20/08, seul gabarit ayant produit a la fois bonne distribution et conversion abonnes superieure a la moyenne la semaine du 21-27/09). Ne jamais laisser un chiffre-choc sans referentiel (nouvelle confirmation d'un decrochage retention sous 10s le 28/09, qplzaGsStFg)."
+    retention_target: "46% pour les Shorts (mis a jour 28/09, retention moyenne semaine calendaire 21-27/09 mesuree par le rapport officiel: 44.61%, coherente avec ~45.5% fin aout ; meilleurs performers de la semaine: s10x5nCdL_E 47.05%, XsT_PBX1iRI 60.99%). Pas de cible chiffree fiable pour la video longue tant que le probleme de distribution hors-creneau n'est pas resolu (les 5 videos longues du 21-27/09 sont toutes hors creneau, volume insuffisant pour un signal de contenu exploitable)."
     affiliation_priority:
       - "tech books & courses"
       - "AI tools freemium"
     cpm_target_min: "1.8"
-    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite (score global unifie >=80/100, repli 75/100 - GUIDE-DE-PRODUCTION.md maj 11/08/2026, ne remplace plus l'ancien seuil 90/85 mentionne dans certains prompts plus anciens). Voir directives/directives-production-2026-08-31.yaml pour l'analyse complete de la semaine 24-30/08 (73 rapports de suivi, 43 videos distinctes - rapport officiel du 31/08 absent au moment de la generation, anomalie signalee dans les directives ; CTR toujours indisponible pour restriction API, 0 commentaire enregistre sur toute l'historique de la chaine, compteur net d'abonnes de la chaine non calculable cette semaine faute de rapport officiel)."
+    notes: "Framework par defaut. Remplace par directives hebdo si disponibles. Reste subordonne a criteres_qualite (score global unifie >=80/100, repli 75/100 - GUIDE-DE-PRODUCTION.md maj 11/08/2026, ne remplace plus l'ancien seuil 90/85 mentionne dans certains prompts plus anciens). Voir directives/directives-production-2026-09-28.yaml pour l'analyse complete de la semaine 21-27/09 (rapport officiel + suivi/*.md du 23 au 27/09 + BASE-DE-CONNAISSANCES.md) - conversion abonnes en aggravation mesuree (7 videos sur 8 a 0% de conversion cette semaine, test de CTA renforce lance en priorite) ; signale egalement une lacune de continuite de la routine SOP11 (aucune directive hebdo generee entre le 31/08 et le 28/09, 3 semaines manquees: 07/09, 14/09, 21/09)."
 
 # === BACKLOG EVERGREEN ===
 # Concepts rechauffables si veille echoue ou pour complementer
@@ -284,6 +282,36 @@ params:
 
 # === CHANGELOG ===
 changelog:
+  - date: "2026-09-28"
+    version: "6.0"
+    change: |
+      Synchronisation directives.default depuis directives/directives-production-
+      2026-09-28.yaml (routine SOP 11, analyse semaine 21-27/09/2026, rapport
+      officiel rapport-2026-09-21.pdf + suivi/*.md du 23 au 27/09 +
+      BASE-DE-CONNAISSANCES.md). Aucune synchronisation depuis le 24/08 (3
+      semaines de directives hebdo manquees: 07/09, 14/09, 21/09 - anomalie de
+      continuite signalee a Theo dans les directives du 28/09).
+      Principaux changements de ciblage (ne modifient pas criteres_qualite,
+      score global unifie >=80/100 inchange) :
+      - Nouvel angle prioritaire: marque IA majeure + echeance datee verifiable
+        (s10x5nCdL_E, meilleur volume brut de la semaine, 997 vues)
+      - Chiffre + referentiel immediat promu gabarit de reference prioritaire
+        (XsT_PBX1iRI, seul cas combinant distribution forte et conversion
+        abonnes superieure a la moyenne cette semaine)
+      - 2e confirmation du gabarit securite IA traitee par une IA (DNB2tI0Rjj4)
+      - retention_target Shorts releve a 46% (mesure semaine: 44.61%)
+      - Blocage video longue hors-creneau: root cause reevaluee, distincte du
+        seul probleme de cron deja documente (ecart 6-11h entre declenchement
+        trigger et publication YouTube reelle, non diagnostique)
+      - Doublon Gemini Live Avatar du 26/09: aggravation (2 versions publiques
+        simultanement), cause structurelle identifiee (anti-doublon ne
+        verifie jamais les runs freres du meme jour)
+      - Conversion abonnes en aggravation (7/8 videos a 0% cette semaine) - test
+        CTA renforce lance en priorite (voir directives/directives-production-
+        2026-09-28.yaml, tests_a_mener)
+    author: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
+    status: "Deploye"
+
   - date: "2026-08-11"
     version: "5.2"
     change: |

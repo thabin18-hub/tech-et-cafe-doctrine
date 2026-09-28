@@ -1,0 +1,152 @@
+# Directives Production - Semaine du 28/09/2026
+# Generees lundi 28/09 9h GMT (SOP 11 - Reunion strategique hebdomadaire)
+#
+# Sources : rapports/rapport-2026-09-21.{pdf,docx,pptx} (rapport officiel hebdomadaire,
+#   couvre la semaine du 21 au 27/09/2026, genere dimanche 27/09 23:59) + rapports de
+#   suivi/*.md du 23/09 au 27/09 (checkpoints 24h/48h/7j/30j, aucun fichier suivi date
+#   du 21 ou 22/09 - lacune de couverture sans impact sur la validite de l'analyse, le
+#   rapport officiel couvre deja toute la semaine calendaire) + BASE-DE-CONNAISSANCES.md
+#   (sections Titres/Hooks/Sujets/Formats gagnants + Erreurs frequentes, lignes 5-261 et
+#   417-582/1786-2126 pour les entrees recentes) + PRODUCTION-CONFIG.yaml (gates qualite
+#   en vigueur). Aucune directive hebdomadaire n'avait ete generee depuis le 31/08/2026
+#   (lacune de 4 semaines : 07/09, 14/09, 21/09 non produites) - a signaler a Theo comme
+#   anomalie de continuite de la routine SOP 11, distincte des anomalies de rapport deja
+#   documentees les semaines precedentes.
+
+semaine_du: "2026-09-28"
+
+# === DONNEES DE LA SEMAINE ANALYSEE (21/09 - 27/09, rapport officiel) ===
+data_semaine_analysee:
+  period: "21/09 - 27/09"
+  videos_publiees_semaine: 19
+  videos_publiees_detail: "18 publiques + 1 privee (ChatGPT S'Installe Dans Word, 0 vue) - 14 Shorts + 5 videos longues. Cadence Shorts conforme a la cible 2/jour. Cadence video longue tres au-dessus de la cible officieuse recente (5 sur 7 jours) mais 5/5 hors creneau doctrinal (voir blocage_operationnel_prioritaire) - volume produit sans distribution utile."
+  vues_cumulees_temps_reel: "2603 vues (vs 2358 la semaine precedente, +10.4%)"
+  semaine_calendaire_analytics: "1412 vues, 30 likes, 1 commentaire, retention moyenne 44.61%, 392 min regardees"
+  abonnes_gagnes_semaine: "5 - total 48/1000 (4.8%)"
+  shorts_90j_glissants: "12091/10 000 000 vues (0.12%)"
+  total_chaine_cumulatif: "13782 vues, 152 videos"
+  ctr_moyen: "NON DISPONIBLE - le rapport officiel ne fournit pas de CTR agrege (restriction API deja documentee les semaines precedentes)."
+  cpm_moyen: "NON DISPONIBLE - chaine non monetisee (48/1000 abonnes, 4.8% du seuil YPP), aucune donnee CPM cette semaine, comme les semaines precedentes."
+  commentaires_note: "1 seul commentaire enregistre sur toute la semaine - aucun verbatim exploitable trouve dans les rapports de suivi pour identifier des questions recurrentes de spectateurs. Engagement globalement tres faible."
+
+# === BLOCAGE OPERATIONNEL PRIORITAIRE (hors perimetre editorial, escalade Theo) ===
+blocage_operationnel_prioritaire:
+  titre: "Video longue toujours hors creneau doctrinal 18:00 GMT - root cause plus complexe qu'un simple cron mal regle, non resolu, 4e escalade"
+  diagnostic: "Le trigger de production video longue (`trig_0128y43fLzq5L7g7A3VmYSK8`, ex-`trig_013BuZUeGuBZqdSuGmRhk5HQ`) tourne toujours sur le cron '6 2 * * *' (02:06 UTC), verifie independamment via list_triggers le 25/09 (BASE-DE-CONNAISSANCES.md) - inchange depuis les semaines precedentes. MAIS l'heure de publication YouTube reellement observee cette semaine ne correspond NI au cron (02:06 UTC) NI au creneau doctrinal (18:00 GMT) : les 5 videos longues du 21-27/09 sont sorties entre 09:55 UTC et 13:00 UTC - un ecart de 6 a 11 heures entre le declenchement du trigger et la publication reelle, non explique a ce jour. C'est un 3e horaire distinct des deux precedemment documentes, qui pointe vers un probleme different (delai de traitement post-declenchement ? file d'attente ? upload differe ?) plutot qu'un simple mauvais reglage de cron."
+  preuve_semaine: "Les 5 videos longues du 21-27/09 (`-53DPkPXOy4` 09:55 UTC, `3LZJpqIJElM` 09:55 UTC, `eMIJ_aXFjg0` 11:00 UTC, `Ur1cf9whi74` 13:00 UTC, `kJ4HZ8q-Ry4` 13:00 UTC) sont toutes hors creneau, 0 a 8 vues chacune selon le rapport officiel - aucune n'a beneficie d'une distribution algorithmique."
+  action_requise: "Escalade renouvelee (4e fois) : (1) investiguer specifiquement l'ecart de 6-11h entre le declenchement du trigger (02:06 UTC confirme) et l'heure de publication YouTube reelle (09:55-13:00 UTC) - ce diagnostic n'existe pas encore et est distinct du debat cron/creneau deja documente ; (2) tant que ce point n'est pas resolu, le cout de production (script, recherche, TTS, montage, chapitres, upload) de chaque video longue est quasi integralement perdu. Ceci est un blocage TECHNIQUE, ces directives editoriales ne peuvent pas le resoudre - hierarchie de decision CONTEXTE-GLOBAL §12 non affectee, ce n'est pas un probleme de qualite de contenu."
+  blocage_secondaire:
+    titre: "Controle anti-doublon structurellement absent entre runs freres du meme jour - 3e occurrence, aggravee"
+    diagnostic: "SOP04 ne verifie l'anti-doublon que contre BASE-DE-CONNAISSANCES.md, qui n'est mise a jour qu'en fin de run - jamais contre les dossiers videos_prod/<date>/ des runs freres en cours d'execution la meme heure. Doublon 'Gemini Live Avatar' le 26/09 (`FLRbQoDjSQk` vs `Jxm9NQ8k-f0`) : cette fois les DEUX videos sont publiques simultanement (aggravation vs le doublon 'ChatGPT/Word' du 21/09 ou un seul jumeau etait public) - ecart de 4x en vues des 24h (393 vs 94)."
+    action_requise: "Verifier videos_prod/<date>/ du depot visuel (pas seulement BASE-DE-CONNAISSANCES.md) juste avant publication de chaque Short/video longue. Correction deja demandee la semaine du 31/08, toujours non appliquee."
+
+# === CE QUI MARCHE (confirme sur donnees reelles 21/09-27/09) ===
+continuer:
+  - "Gabarit 'marque IA majeure + echeance datee verifiable' (nouveau, confirme cette semaine) : `s10x5nCdL_E` ('Pourquoi Google Envoie De L'IA Dans L'Espace Le 1er Octobre') atteint 997 vues temps reel - le meilleur volume brut de la semaine, tres au-dessus de la moyenne - avec 47.05% de retention et 96.5% de trafic SHORTS. A reproduire sur d'autres annonces avec date precise et verifiable."
+  - "Chiffre en tete AVEC referentiel explicite immediat dans la phrase suivante (regle du 20/08, confirmee fortement cette semaine) : `XsT_PBX1iRI` ('Cette IA Chinoise A Triplé Sa Vitesse Toute Seule', cloture au 7j le 25/09) atteint 738 vues, 60.99% de retention, ET 0.95% de conversion abonnes - plus du double de la moyenne chaine (0.46%). C'est le SEUL cas de la periode qui combine bonne distribution ET bonne conversion abonnes - a traiter comme le gabarit de reference prioritaire, pas seulement un cas parmi d'autres."
+  - "Securite IA ou la faille/le risque est decouverte ou traitee par une IA elle-meme (2e cas confirme, distinct de la cybersecurite generale hors ligne editoriale) : `DNB2tI0Rjj4` ('Gemini A Piraté 3 Entreprises') atteint 115 vues, 53.99% de retention, 5.3% de taux de like - deuxieme confirmation independante apres le cas deja documente (`3TlNMHcm8vs`). Categorie a formaliser explicitement dans la veille quotidienne (SOP01)."
+
+# === CE QUI NE MARCHE PAS ===
+arreter:
+  - "PRIORITE MAXIMALE - voir blocage_operationnel_prioritaire ci-dessus. Video longue publiee hors creneau : 5/5 videos longues de la semaine (21-27/09) hors creneau, 0-8 vues chacune, root cause desormais plus complexe qu'un cron mal regle (ecart de 6-11h entre declenchement et publication reelle, non diagnostique). 4e escalade consecutive sans resolution."
+  - "Chiffre-choc en ouverture de hook SANS son referentiel immediat dans la phrase suivante (regle du 20/08, reconfirmee une nouvelle fois) : `qplzaGsStFg` ('50% Plus Précises') chute a un relativeRetentionPerformance de 0.101 des 5.2 secondes (sous le seuil d'alerte 0.15) - confirmation supplementaire d'une longue serie documentee depuis le 20/08."
+  - "Doublon de sujet publie 2 fois la meme semaine, cette fois EN PUBLIC simultanement (aggravation, voir blocage_operationnel_prioritaire/blocage_secondaire) : `FLRbQoDjSQk` vs `Jxm9NQ8k-f0` (Gemini Live Avatar, 26/09) - ecart de 4x en vues a 24h (393 vs 94) entre les deux jumeaux, risque pour la Clarte et la credibilite de la chaine (priorite n°4 de la hierarchie de decision)."
+  - "A traiter avec prudence, pas encore une regle mais 2e cas defavorable : sujet 'fonctionnalite smartphone' sans ancrage marque IA reconnue ni chiffre dans le titre : `8_8IbPF8O48` ne genere que 6 vues a 48h. Ne pas encore formaliser comme angle a eviter (echantillon insuffisant, 2 cas), mais deprioriser face aux gabarits confirmes ci-dessus."
+  - "Conversion abonnes en aggravation mesuree : 7 videos sur 8 avec donnees Analytics exploitables cette semaine affichent 0% de conversion abonnes (seule `s10x5nCdL_E` genere 1 abonne, ~0.29%, encore sous la moyenne chaine 0.46%). Un CTA standard/passif ne fonctionne manifestement plus - voir tests_a_mener."
+
+# === PARAMETRES PRODUCTION ===
+angles_privilegier:
+  - "Marque IA majeure reconnue + echeance datee et verifiable annoncee dans le titre (nouveau, meilleur volume brut de la semaine - voir continuer)."
+  - "Chiffre en tete du hook AVEC son referentiel explicite dans la phrase immediatement suivante (regle du 20/08, desormais le gabarit de reference prioritaire : seul cas combinant distribution forte ET conversion abonnes superieure a la moyenne cette semaine)."
+  - "Securite IA ou la faille/le risque est decouverte ou traitee par une IA elle-meme, distinct de la cybersecurite generale (2e cas confirme cette semaine, a formaliser en veille quotidienne SOP01)."
+  - "A tester (nouveau format, un seul cas a ce jour, pas encore confirme robuste) : structure 'statistique avant/apres + frustration IA quotidienne resolue' (`nd_k65RrXH8`, 65.91% de retention au checkpoint 30 jours) - candidat pour generalisation a d'autres irritants IA quotidiens (latence, hallucinations, interruptions de conversation)."
+  - "Maintenu sans nouvelle donnee cette semaine (aucun cas produit ni contredit du 21 au 27/09, ne pas abandonner faute de test) : personnalite/dirigeant IA en rupture ou en aveu (confirme le 31/08 sur -A3JYclGdag et WXDjghr5xEM) ; sujets IA de niche a fort trafic recherche en format long."
+
+angles_eviter:
+  - "PRIORITE MAXIMALE - Video longue publiee hors du creneau documente 18:00 GMT (voir blocage_operationnel_prioritaire) : 5/5 cas cette semaine, 0-8 vues chacune. Ceci est un blocage OPERATIONNEL, pas un signal editorial - ne motive aucune baisse de seuil qualite."
+  - "Chiffre-choc en ouverture de hook sans son referentiel immediat dans la phrase suivante (regle du 20/08, reconfirmee une nouvelle fois cette semaine sur qplzaGsStFg - decrochage retention avant 10 secondes)."
+  - "Meme sujet publie 2 fois la meme semaine sans espacement ni differenciation de titre (nouveau cas aggrave le 26/09, les deux versions publiques simultanement - voir blocage_secondaire) : risque direct pour la Clarte et la confiance du public."
+  - "A deprioriser avec prudence (2e cas defavorable, echantillon encore insuffisant pour en faire une regle ferme) : sujet 'fonctionnalite smartphone' sans marque IA reconnue ni chiffre dans le titre (8_8IbPF8O48, 6 vues a 48h)."
+  - "Crypto/blockchain."
+  - "Memes/viral culture."
+  - "Sujets institutionnels/financiers sans ancrage IA explicite dans le titre (regle maintenue du 31/08, aucun nouveau cas ni contre-exemple cette semaine - a retester si l'occasion se presente plutot que la considerer perimee)."
+
+duree_cible: "48-55s (Shorts), coherent avec la fourchette 43-59s mesuree cette semaine et validee par le rapport officiel."
+
+hook_strategy: "Deux structures prioritaires egales cette semaine : (1) nommer une marque IA majeure reconnue + une echeance datee et verifiable des la 1ere phrase (meilleur volume brut mesure) ; (2) un chiffre en ouverture TOUJOURS suivi immediatement de son referentiel explicite dans la phrase suivante (regle du 20/08, seul gabarit ayant produit a la fois une bonne distribution et une conversion abonnes superieure a la moyenne cette semaine). Ne jamais laisser un chiffre-choc sans referentiel : nouvelle confirmation d'un decrochage retention sous 10 secondes cette semaine (qplzaGsStFg)."
+
+retention_target: "46% pour les Shorts (retention moyenne semaine calendaire mesuree par le rapport officiel : 44.61%, coherente avec ~45.5% mesure fin aout ; meilleurs performers de la semaine : s10x5nCdL_E 47.05%, XsT_PBX1iRI 60.99%). Pour la video longue : toujours pas de cible chiffree fiable tant que le blocage de distribution hors-creneau n'est pas resolu (voir blocage_operationnel_prioritaire) - aucune des 5 videos longues de la semaine n'a atteint un volume suffisant pour un signal de contenu exploitable."
+
+affiliation_priority:
+  - "tech books & courses"
+  - "AI tools freemium"
+
+cpm_target: "1.8"
+cpm_note: "Toujours aucune donnee CPM disponible cette semaine (chaine non monetisee, 48/1000 abonnes soit 4.8% du seuil YPP) - cible precedente conservee a titre indicatif uniquement, a ne pas traiter comme confirmee."
+
+# === POINT DE VIGILANCE SUR LES DONNEES (exactitude avant tout, hierarchie de decision §1) ===
+point_vigilance_donnees:
+  - "`u3rUtTOPXNQ` ('Google Home Obéit Enfin') est cite par le rapport officiel comme la meilleure retention de la semaine (87.0%), mais cette valeur n'a pas pu etre retrouvee dans les rapports de suivi disponibles (suivi/2026-09-25_u3rUtTOPXNQ_24h.md et suivi/2026-09-26_u3rUtTOPXNQ_48h.md marquent tous deux Analytics 'indisponible', seul le volume brut est mesure : 156 vues a 48h). Le chiffre provient probablement d'un checkpoint 7 jours non encore present dans suivi/ au moment de cette generation. A VERIFIER avant de promouvoir ce sujet/gabarit en angle privilegie confirme la semaine prochaine - ne pas encore le traiter comme une donnee solide malgre son inclusion dans le rapport officiel."
+
+# === TESTS A MENER CETTE SEMAINE ===
+tests_a_mener:
+  - "Hypothese : un CTA d'abonnement renforce (formulation plus explicite et repetee, place au moment de retention maximale plutot qu'en fin de video uniquement) ameliore la conversion abonnes, qui s'est degradee cette semaine (7 videos sur 8 a 0% de conversion, seul XsT_PBX1iRI depasse la moyenne chaine a 0.95%). Objectif : sortir de la degradation observee. Mesure de reussite : sur les 5 prochains Shorts publies avec ce CTA renforce et disposant de donnees Analytics exploitables a 48h, au moins 2/5 depassent 0.46% de conversion abonnes (moyenne chaine actuelle), avec un recul d'au moins 48h."
+  - "Hypothese : le gabarit 'statistique avant/apres + frustration IA quotidienne resolue' (confirme une fois sur nd_k65RrXH8, 65.91% retention au 30j) se generalise a d'autres irritants IA quotidiens (latence, hallucinations, interruptions de conversation). Objectif : confirmer au-dela d'un seul cas. Mesure de reussite : sur les 2 prochains sujets suivant ce gabarit, retention 7 jours >=55% sur au moins 1 cas sur 2, avec un recul d'au moins 7 jours et donnees Analytics exploitables."
+  - "Hypothese : le gabarit 'securite IA ou la faille est decouverte/traitee par une IA elle-meme' (2 cas confirmes a ce jour : 3TlNMHcm8vs et DNB2tI0Rjj4) est reproductible sur un 3e sujet independant. Objectif : confirmer la robustesse du gabarit avant de le promouvoir en priorite haute et de l'integrer explicitement a la veille quotidienne SOP01. Mesure de reussite : le prochain sujet de ce type atteint une retention >=50% ET un taux de like >=3% (reference DNB2tI0Rjj4 : 53.99% retention, 5.3% likes), avec un recul d'au moins 48h."
+
+notes: |
+  RESUME FACTUEL DE LA SEMAINE (21-27/09/2026, source rapport officiel + suivi/*.md) :
+  19 videos publiees (18 publiques + 1 privee), 14 Shorts + 5 videos longues. Volume en
+  hausse (+10.4% vs semaine precedente, 2603 vues cumulees temps reel). Retention
+  moyenne semaine calendaire 44.61% (Analytics finalise), 5 abonnes gagnes (total
+  48/1000, 4.8% du seuil YPP). Engagement tres faible : 30 likes, 1 seul commentaire sur
+  toute la semaine, aucun verbatim de spectateur exploitable trouve.
+
+  MEILLEURS SIGNAUX EDITORIAUX : gabarit 'marque IA majeure + echeance datee verifiable'
+  (s10x5nCdL_E, 997 vues, meilleur volume brut) et gabarit 'chiffre + referentiel
+  immediat' (XsT_PBX1iRI, 738 vues, 60.99% retention, 0.95% conversion abonnes - seul
+  cas combinant distribution ET conversion cette semaine). 2e confirmation du gabarit
+  'securite IA traitee par une IA' (DNB2tI0Rjj4).
+
+  SIGNAL NEGATIF LE PLUS IMPORTANT : conversion abonnes en aggravation (7/8 videos a 0%
+  cette semaine) malgre des retentions parfois solides - confirme que retention forte
+  n'implique pas conversion, sans exception cette semaine. D'ou le test CTA renforce en
+  priorite.
+
+  DEUX BLOCAGES OPERATIONNELS MAJEURS (hors perimetre editorial de ces directives, voir
+  blocage_operationnel_prioritaire) : (1) video longue toujours hors creneau doctrinal,
+  root cause reevaluee cette semaine comme plus complexe qu'un simple cron mal regle -
+  un ecart de 6 a 11 heures entre le declenchement du trigger (02:06 UTC confirme) et la
+  publication YouTube reelle (09:55-13:00 UTC) reste non diagnostique, 4e escalade sans
+  resolution ; (2) controle anti-doublon toujours absent entre runs freres du meme jour,
+  aggrave cette semaine (les deux jumeaux Gemini Live Avatar publies publics
+  simultanement le 26/09, contre un seul jumeau public lors du cas ChatGPT/Word
+  precedent). Aucune de ces directives editoriales ne peut resoudre ces deux points -
+  ce sont des blocages techniques distincts de la hierarchie de decision editoriale.
+
+  ANOMALIE DE PROCESSUS A SIGNALER A THEO : aucune directive hebdomadaire n'avait ete
+  generee depuis le 31/08/2026 (4 semaines sans execution de la routine SOP 11 : 07/09,
+  14/09, 21/09 manquantes), alors que les rapports officiels et rapports de suivi
+  correspondants existent bien dans le depot pour ces semaines. Cette generation du
+  28/09 ne couvre que la derniere semaine disponible (21-27/09) conformement au principe
+  de priorite n°6 (rapidite de publication) applique au processus lui-meme - a traiter
+  comme un gap de continuite de routine a corriger structurellement, distinct des
+  anomalies de rapport deja documentees les semaines precedentes.
+
+  RAPPEL DE GOUVERNANCE (verifie dans PRODUCTION-CONFIG.yaml, changelog 11/08/2026) : le
+  seuil de publication en vigueur est un score global unifie >=80/100 (repli 75/100 sur
+  la meilleure tentative), remplace depuis le 11/08/2026 l'ancien seuil 90/100 global +
+  85/100 SEO separe parfois encore mentionne dans des prompts obsoletes non corriges.
+  Ces directives n'abaissent ce seuil en aucun cas - elles n'affinent que le ciblage
+  (angles, duree, hook, affiliation), conformement a la hierarchie de decision
+  (exactitude > valeur spectateur > qualite editoriale > clarte > performance YouTube >
+  rapidite de publication, CONTEXTE-GLOBAL-TECH-CAFE.md §12).
+
+# === METADATA ===
+metadata:
+  version: "6.0"
+  generated_at: "2026-09-28T09:00:00Z"
+  generated_by: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
+  algorithm: "analyse du rapport officiel rapport-2026-09-21.pdf (semaine 21-27/09) + rapports de suivi/*.md du 23/09 au 27/09 + BASE-DE-CONNAISSANCES.md (sections gagnants + erreurs frequentes)"
+  manual_override: false
+  next_update: "2026-10-05"
