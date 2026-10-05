@@ -1,0 +1,147 @@
+# Directives Production - Semaine du 05/10/2026
+# Generees lundi 05/10 9h GMT (SOP 11 - Reunion strategique hebdomadaire)
+#
+# Sources : rapports/rapport-2026-09-28.{pdf,docx,pptx} (rapport officiel, semaine 28/09-04/10,
+#   genere le 05/10) + suivi/2026-10-01_*.md (10 checkpoints : seuls fichiers de suivi de la
+#   semaine, aucun suivi date du 28-30/09 ni du 02-04/10 - lacune de couverture du suivi
+#   quotidien, le rapport officiel couvre toute la semaine) + BASE-DE-CONNAISSANCES.md
+#   (entrees de production du 29/09 au 05/10) + PRODUCTION-CONFIG.yaml (gates qualite).
+# Suffisance des donnees : 12 videos avec Analytics traites sur 21 (>=3) et >=24h de recul pour
+#   18 videos sur 21 -> directives valides. CTR et CPM NON disponibles (voir data_semaine_analysee).
+#   Les 3 videos publiees <24h avant le rapport (Microsoft ransomware, OpenAI Computer Use,
+#   Ant Group) sont exclues de toute regle ferme : signal provisoire uniquement.
+
+semaine_du: "2026-10-05"
+
+# === DONNEES DE LA SEMAINE ANALYSEE (28/09 - 04/10, rapport officiel) ===
+data_semaine_analysee:
+  period: "28/09 - 04/10"
+  videos_publiees_semaine: 21
+  videos_publiees_detail: "21 publiques : 14 Shorts + 7 videos longues. Cadence Shorts conforme (2/jour). 7 videos longues sur 7 jours, toutes publiees hors creneau doctrinal (09:00-12:00 UTC au lieu de 18:00 GMT)."
+  vues_cumulees_temps_reel: "1927 vues (vs 2603 la semaine precedente, -26.0%). NON COMPARABLE a iso-recul : 3 videos ont <24h et 9 n'ont pas d'Analytics ; la baisse est en partie un artefact de maturite des videos recentes, pas une degradation demontree."
+  semaine_calendaire_analytics: "1634 vues, 21 likes, 0 commentaire, 416 min regardees"
+  retention_moyenne: "38.1% sur 12 videos avec Analytics (inclut des videos longues a 0-27% et 3 Shorts a <10 vues) ; 43.0% en moyenne simple sur les 10 Shorts avec Analytics (semaine precedente : 44.61% officiel, definitions non strictement identiques)"
+  ctr_moyen: "NON DISPONIBLE - restriction API documentee (impressions/CTR inaccessibles). Aucune decision de packaging n'est donc fondee sur le CTR ; proxy utilise : part du trafic SHORTS/YT_SEARCH et volume de vues."
+  cpm_moyen: "NON DISPONIBLE - chaine non monetisee (62/1000 abonnes, 6.2% du seuil YPP)."
+  abonnes: "8 gagnes / 1 perdu (Analytics calendaire, net +7) ; temps reel 48 -> 62 (+14). Total 62/1000 (6.2%). Shorts 90j : 15 232 / 10 000 000 (0.15%). Meilleure semaine d'abonnes depuis le debut du suivi, mais attribution par video impossible (aucun abonne par video dans les suivis du 01/10)."
+  commentaires_note: "0 commentaire cette semaine (1 la semaine precedente). Aucun verbatim spectateur exploitable : aucune demande recurrente identifiable. Ne pas inventer de demande d'audience."
+
+# === TOP / FLOP DE LA SEMAINE (donnees rapport officiel) ===
+classement_contenu:
+  meilleurs:
+    - "Ant Group Lance Une IA A 560 Milliards De Parametres : 463 vues, 19 likes (4.1%), <24h - PROVISOIRE, meilleur volume ET meilleur engagement de la semaine."
+    - "Microsoft Active Autopilot Des Le 30 Septembre : 423 vues, retention 44.2% (50.6% sur Analytics partiel au suivi 48h), 88-94% trafic Shorts, 0 abonne attribue (suivi 48h)."
+    - "Apple Donne 17 Outils IA A Safari : 418 vues, retention 48.5%."
+    - "OpenAI Lance Dots, Ses Agents IA Actifs Jour Et Nuit : 312 vues, retention 67.2% - meilleure retention a volume significatif de la semaine."
+    - "Suno Devient Enfin Legal (Warner/BMG) : 122 vues, retention 35.0% (volume correct, retention sous la moyenne)."
+  moins_bons:
+    - "Kimi K3 : L'IA Gratuite De 2800 Milliards De Parametres : 6 vues, retention 0.0% (trafic YT_SEARCH seul, jamais entre dans le flux Shorts)."
+    - "Microsoft Fusionne 4 Outils IA En Une Seule Application : 6 vues, retention 10.9%."
+    - "OpenAI Lance Dots, L'IA Qui Agit Avant Toi : 9 vues - jumeau du Short a 312 vues, publie 4h plus tard (doublon)."
+    - "Videos longues : 0 a 6 vues chacune sur 7 (Sora 2 vues/0.9%, OpenAI agents gouvernement 6 vues/26.9%, Meta Luna 0, GPT-6 Astra 0, Dots explique 3, FTC 1, Computer Use 0)."
+    - "Cloture 30j `my7fOCxCq94` (Caterpillar, sujet industriel B2B, 10 vues, retention 6.9%, score ~13/100) et `IMVLnabsbYQ` (Google livres -> profs IA, 41 vues, 37.0%, ~43/100)."
+
+# === RESOLUTION DU POINT DE VIGILANCE DU 28/09 ===
+point_vigilance_donnees:
+  - "RESOLU : `u3rUtTOPXNQ` (Google Home + Gemini) etait cite a 87.0% de retention par le rapport officiel du 21/09. Le checkpoint 7j du 01/10 donne 61.0% (Analytics 207 vues, 212 vues publiques, 87% trafic Shorts, 9% YT_SEARCH). La valeur de reference a utiliser est 61.0%, pas 87.0% - ne plus citer 87%. 61% reste le meilleur niveau de retention a volume > 200 vues sur le sujet 'IA du quotidien/maison + marque connue'."
+  - "Analytics partiels : `B4w00JccMQk` affiche 100 vues Analytics pour 424 vues publiques au suivi 48h (retention 50.6% indicative) ; le rapport officiel a 44.2%. Utiliser 44.2% (donnee consolidee)."
+  - "Dots : `Jsnv1K_JXr4` (301 vues au suivi 48h) vs `NR73AoA6OgE` (6 vues au suivi 24h, 9 vues au rapport). Ecart ~35x, cause non isolee (titre et hook differents) - ne pas presenter la cannibalisation par doublon comme prouvee, mais c'est le 4e cas de doublon documente."
+
+# === BLOCAGES OPERATIONNELS (hors perimetre editorial, escalade Theo) ===
+blocage_operationnel_prioritaire:
+  titre: "Video longue hors creneau doctrinal 18:00 GMT : 7/7 cette semaine, distribution quasi nulle, 5e escalade consecutive"
+  diagnostic: "Le rapport officiel confirme 7 videos longues publiees entre 09:00 et 12:00 UTC, moyenne 1.7 vue/video contre 137 vues/Short. Le trigger de production tourne a 02:06 UTC (PRODUCTION-CONFIG.yaml) : ecart de ~7-10h entre declenchement et publication reelle toujours non diagnostique. BASE-DE-CONNAISSANCES.md documente 15 verifications de gouvernance horaire sans resolution (la derniere, 05/10, escalade)."
+  limite_du_diagnostic: "Cause du faible volume des longues NON isolee : le suivi du 01/10 note aussi 'format long sans autorite de chaine' (pas d'acces au flux Shorts). Horaire hors creneau et faible autorite de chaine sont deux hypotheses concurrentes, aucune n'est prouvee ; ne pas attribuer le 0-vue au seul horaire."
+  action_requise: "(1) Theo : diagnostiquer l'ecart declenchement 02:06 UTC / publication 09:00-12:00 UTC. (2) Theo : decider du ratio d'effort long/short (CONTEXTE-GLOBAL §11 : le calendrier 'peut evoluer a partir des donnees observees') - le rapport officiel recommande de reserver le long aux sujets a fort potentiel de recherche et de retester en Short si le long reste a 0-10 vues apres 7 jours. Ces directives NE modifient PAS la cadence et n'abaissent aucun seuil qualite."
+  blocage_secondaire:
+    titre: "Anti-doublon entre runs freres / meme journee : 4e cas documente (Dots, 30/09)"
+    action_requise: "Avant de figer un sujet, verifier videos_prod/<date>/ ET videos_prod_longue/<date>/ du jour et de la veille, en plus de BASE-DE-CONNAISSANCES.md. Regle 'meme produit, pas seulement meme titre' (appliquee le 05/10 sur Gemini 4 Argon) a generaliser a tous les runs."
+  incident_securite:
+    titre: "Secret expose en clair dans une sortie de commande (nouvelle occurrence documentee le 04/10)"
+    action_requise: "Ticket de gouvernance separe recommande par le rapport officiel (reco 5). Ne jamais afficher d'URL de remote git contenant un identifiant ; cloner sans credential dans l'URL. Aucun secret n'est reproduit dans ce fichier."
+
+# === CE QUI MARCHE ===
+continuer:
+  - "Gabarit 'marque IA majeure + echeance ou chiffre date verifiable' : confirme par Autopilot Microsoft 'Des Le 30 Septembre' (423 vues, ~90% Shorts) et Safari '17 outils' (418 vues, 48.5%), en plus de s10x5nCdL_E la semaine precedente - 3 cas independants de bon volume. Reste le gabarit de reference pour le volume. Limite : il ne garantit pas la retention (44-48%) ni la conversion (0 abonne attribue sur Autopilot)."
+  - "Titre 'marque + benefice concret' + hook court : Dots 'Actifs Jour Et Nuit' (312 vues, retention 67.2%) et Google Home 'Obeit Enfin' (212 vues, 61.0% a 7j). Les 2 meilleures retentions a volume > 200 vues ont toutes deux un benefice quotidien concret nomme dans le titre."
+  - "Shorts 44-57s : concentrent la quasi-totalite du volume (463/423/418/312/122 vues). Duree 48-55s inchangee."
+  - "Titre commencant par la marque ou le produit (regle du 29/08) : conserver, aucun contre-exemple cette semaine."
+  - "Anti-doublon par angle distinct pour le long vs Short du meme sujet (Dots Short 30/09 -> long 'risques caches' 02/10) : respecte, a conserver ; l'effet sur la distribution du long n'est pas mesurable (0-3 vues)."
+
+# === CE QUI NE MARCHE PAS ===
+arreter:
+  - "Sujets industriels/B2B sans angle spectateur (Caterpillar, `my7fOCxCq94` : retention 6.9%, 3s de visionnage moyen, 2e cas defavorable de ce type) : ne plus produire sans reformulation centree sur l'impact pour le spectateur."
+  - "Deux Shorts sur le meme produit/annonce le meme jour (Dots 30/09 : 301 vs 6-9 vues) : arreter, 4e occurrence."
+  - "Benchmark/precision abstraite ouvert sur le chiffre sans effet concret pour le spectateur (`qplzaGsStFg` : retention 24.9% a 7j, 12s sur 52s ; contraste avec `u3rUtTOPXNQ` 61.0%, meme marque Google, n=2). Ouvrir sur l'effet concret AVANT le chiffre (regle chiffre+referentiel du 20/08 maintenue)."
+  - "Mettre du budget d'attente sur la 'distribution' des longues sans changement : 7/7 sous 7 vues. Pas de nouveau levier editorial a deployer sur le long tant que le blocage operationnel n'est pas diagnostique (voir blocage_operationnel_prioritaire) - ne pas conclure que le contenu long est mauvais, la donnee ne le permet pas."
+  - "Conclusions de retention sur moins de 24h ou moins de ~20 vues : Kimi K3 (6 vues, 0.0%), Microsoft Fusionne (6 vues, 10.9%), Dots jumeau (9 vues, 69.5%) ne sont PAS des signaux editoriaux fiables."
+
+# === PARAMETRES PRODUCTION ===
+angles_privilegier:
+  - "Marque IA majeure + echeance datee ou chiffre verifiable dans le titre (Microsoft Autopilot 30/09, Apple Safari 17 outils, Ant Group 560 Mds) - gabarit volume, 3 cas confirmes."
+  - "IA du quotidien/maison/travail d'une marque connue avec benefice concret et mot 'enfin'/'maintenant'/'actifs jour et nuit' (Google Home 61.0% de retention a 7j, Dots 67.2%) - gabarit retention, 2 cas ; a confirmer sur un 3e."
+  - "Chiffre en tete du hook AVEC son referentiel explicite dans la phrase suivante (regle du 20/08, maintenue)."
+  - "Securite IA ou la faille est decouverte/traitee par une IA elle-meme (2 cas confirmes la semaine du 21/09 ; aucun nouveau cas cette semaine : 'Microsoft Ransomware 100% Autonome' est <24h, 24 vues, non evaluable) - garder en veille SOP01, ne pas promouvoir davantage."
+  - "Maintenu sans nouvelle donnee : personnalite/dirigeant IA en rupture ou en aveu ; titre qui leve une objection implicite (cout, complexite, disponibilite - GPT-6.1 Sol '5 fois moins cher' : 24 vues, retention 50.1%, non concluant)."
+
+angles_eviter:
+  - "Sujets industriels/B2B sans angle spectateur (2 cas defavorables, dont `my7fOCxCq94` 10 vues/6.9%)."
+  - "Meme produit/annonce publie 2 fois le meme jour (4 cas documentes, dernier : Dots 30/09)."
+  - "Chiffre-choc/benchmark en ouverture sans effet concret ni referentiel immediat (`qplzaGsStFg` 24.9%)."
+  - "Crypto/blockchain."
+  - "Memes/viral culture."
+  - "Actualite institutionnelle/business sans cadrage IA explicite dans le titre (regle maintenue ; AMD/World Labs 20 vues, 50.0% retention : titre cadre IA, donc hors regle, volume faible a surveiller)."
+  - "Videos longues publiees hors creneau : blocage operationnel, pas un signal editorial."
+
+duree_cible: "Shorts 48-55s (44-57s mesure, concentre 5/5 meilleurs volumes). Video longue : 7-9 min, inchange (aucun signal de contenu exploitable, 0-6 vues)."
+
+hook_strategy: "(1) Marque IA majeure nommee des la 1ere phrase + echeance datee ou chiffre verifiable. (2) Si le sujet est un benchmark/precision/prix : ouvrir sur l'effet concret pour le spectateur ('ta meteo', 'ta facture', 'ton Safari') AVANT le chiffre, puis le chiffre avec son referentiel dans la phrase suivante. (3) Pas de chiffre-choc sans referentiel. Rappel exactitude : un hook ne doit jamais promettre plus que ce que le sujet etablit (CONTEXTE-GLOBAL §8) ; un CTR/volume eleve avec retention faible signale une promesse exageree (GUIDE-ANALYSE §4)."
+
+retention_target: "Shorts : 45% (moyenne simple 43.0% cette semaine sur 10 Shorts avec Analytics, 44.61% semaine precedente ; meilleurs : Dots 67.2%, Google Home 61.0%). Video longue : toujours aucune cible chiffree fiable tant que la distribution n'est pas diagnostiquee."
+
+affiliation_priority:
+  - "tech books & courses"
+  - "AI tools freemium"
+
+cpm_target: "1.8"
+cpm_note: "Aucune donnee CPM (chaine non monetisee, 62/1000 abonnes). Cible conservee a titre indicatif uniquement, non confirmee."
+
+# === TESTS A MENER CETTE SEMAINE ===
+tests_a_mener:
+  - "Hypothese (reconduit du 28/09, NON evalue - aucun Short avec CTA renforce identifie avec Analytics a 48h cette semaine) : un CTA d'abonnement lie a la promesse du sujet (ex. 'le prochain changement Microsoft, je te le dis ici', suggere par le suivi `B4w00JccMQk`), place pendant le dernier tiers du Short plutot qu'en phrase generique finale, ameliore la conversion abonnes. Objectif : sortir du 0 abonne attribue sur Shorts a 400+ vues (Autopilot, Safari, Google Home). Mesure de reussite : sur 5 Shorts avec CTA lie et Analytics a 48h, au moins 2/5 depassent 0.46% de conversion abonnes (moyenne chaine). Obligation : le suivi 48h doit consigner explicitement 'CTA lie : oui/non' et le nombre d'abonnes."
+  - "Hypothese : sur les sujets benchmark/prix/precision, ouvrir sur l'effet concret avant le chiffre ameliore la retention (comparaison `qplzaGsStFg` 24.9% vs `u3rUtTOPXNQ` 61.0%, n=2, non prouve). Objectif : retention des Shorts de type benchmark. Mesure de reussite : sur les 2 prochains Shorts de ce type, retention >=45% sur au moins 1 sur 2 avec >=50 vues Analytics et recul >=48h."
+  - "Hypothese : un 3e cas 'IA du quotidien d'une marque connue + benefice concret + enfin/maintenant' confirme le gabarit retention (Google Home 61.0%, Dots 67.2%). Objectif : promouvoir ou ecarter ce gabarit. Mesure de reussite : retention >=55% ET >=100 vues sur le prochain Short de ce type, recul >=48h."
+  - "Hypothese (reconduit, aucun cas produit cette semaine) : le gabarit 'statistique avant/apres + frustration IA resolue' (`nd_k65RrXH8`, 65.91% a 30j) se generalise. Mesure : retention 7j >=55% sur 1 des 2 prochains sujets, recul 7j."
+  - "Hypothese operationnelle (hors qualite editoriale, decision Theo) : pour 1 sujet long a fort volume de recherche, publier le meme sujet en Short 48-55s au meme jour distinct (angle different, jamais meme jour) et comparer le volume a 7j, pour separer 'format long sans autorite' de 'sujet sans demande'. Mesure : Short >=100 vues et long <10 vues => la contrainte est le format/distribution, pas le sujet. A ne lancer qu'avec validation de Theo (ne modifie pas la cadence)."
+
+# === NOTES ===
+notes: |
+  RESUME FACTUEL (28/09-04/10/2026, rapport officiel + suivi du 01/10 + BASE-DE-CONNAISSANCES) :
+  21 videos publiques (14 Shorts, 7 longues). 1927 vues cumulees temps reel (-26% vs semaine
+  precedente, non comparable a iso-recul), 1634 vues Analytics, retention moyenne 38.1%
+  (12 videos) / 43.0% Shorts seuls (10 videos). Abonnes : 48 -> 62 (+14 temps reel, +7 net
+  Analytics), 6.2% du seuil YPP. 21 likes, 0 commentaire. CTR et CPM indisponibles.
+
+  CE QUI SE CONFIRME : le gabarit 'marque majeure + echeance/chiffre date' donne le meilleur
+  volume (Autopilot 423, Safari 418, Ant Group 463 provisoire) ; les meilleures retentions a
+  volume (Dots 67.2%, Google Home 61.0%) viennent de benefices quotidiens concrets.
+  LIMITES : retention 44-48% sur les gabarits volume ; conversion abonnes attribuee a aucun Short
+  du suivi ; Kimi K3 et Microsoft Fusionne (6 vues) non interpretables. Le point de vigilance
+  du 28/09 est resolu : retention Google Home = 61.0% et non 87%.
+  PROBLEMES OPERATIONNELS PERSISTANTS (hors perimetre de ces directives) : 7/7 longues hors creneau
+  et a 0-6 vues (5e escalade) ; 4e doublon (Dots) ; secret expose en clair dans une sortie de
+  commande (ticket separe recommande) ; suivi quotidien lacunaire (seul le 01/10 documente cette
+  semaine, 9/21 videos sans Analytics au rapport).
+  Gouvernance : aucun seuil abaisse. Seuil publication en vigueur dans PRODUCTION-CONFIG.yaml : score
+  global unifie >=80/100, repli 75/100 (decision Theo 11/08/2026, remplace l'ancien 90/85 cite dans
+  certains prompts). Hierarchie respectee : exactitude > valeur spectateur > qualite editoriale >
+  clarte > performance YouTube > rapidite (CONTEXTE-GLOBAL §12). Les directives n'affinent que
+  le ciblage (angles, duree, hook, affiliation).
+
+metadata:
+  version: "7.0"
+  generated_at: "2026-10-05T09:00:00Z"
+  generated_by: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
+  algorithm: "rapport-2026-09-28.pdf (semaine 28/09-04/10) + suivi/2026-10-01_*.md + BASE-DE-CONNAISSANCES.md + PRODUCTION-CONFIG.yaml"
+  manual_override: false
+  next_update: "2026-10-12"
