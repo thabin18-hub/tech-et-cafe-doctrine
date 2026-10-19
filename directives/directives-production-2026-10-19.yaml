@@ -1,0 +1,152 @@
+# Directives Production - Semaine du 19/10/2026
+# Generees lundi 19/10 9h GMT (SOP 11 - Reunion strategique hebdomadaire)
+#
+# Sources : rapports/rapport-2026-10-12.{pdf,docx,pptx} (rapport officiel, semaine 12/10-18/10,
+#   genere le 19/10) + suivi/2026-10-15_*.md (10 checkpoints) + suivi/2026-10-18_*.md (11 checkpoints)
+#   + BASE-DE-CONNAISSANCES.md + PRODUCTION-CONFIG.yaml (gates qualite).
+# Suffisance des donnees : >=3 videos avec Analytics (9 Shorts avec retention au rapport + 12
+#   checkpoints 7j/30j) et >=24h de recul pour 15 videos publiques sur 18 -> directives valides,
+#   MAIS volumes faibles (la plupart des Shorts n=11 a 104 vues, 6/18 sans Analytics consolide).
+#   Toute conclusion sur moins de ~50 vues Analytics reste indicative. CTR et CPM NON disponibles.
+# Continuite : aucun fichier directives-production-2026-10-12.yaml n'existe (semaine du 12/10 non
+#   couverte par la routine SOP 11 - 2e lacune apres 07/09, 14/09, 21/09). Les directives du
+#   05/10 sont restees en vigueur dans PRODUCTION-CONFIG.yaml pendant 2 semaines ; celles-ci les
+#   remplacent.
+
+semaine_du: "2026-10-19"
+
+# === DONNEES DE LA SEMAINE ANALYSEE (12/10 - 18/10, rapport officiel) ===
+data_semaine_analysee:
+  period: "12/10 - 18/10"
+  videos_publiees_semaine: "21 (12 Shorts + 6 longues publiques + 3 encore privees <28h, exclues du decompte)"
+  vues: "480 vues Analytics calendaires (vs 773 la semaine precedente, -38%) ; 142 min (vs 261). 470 vues publiques cumulees sur 18 videos. Comparaison NON iso-recul : 6 videos sur 18 sans fenetre Analytics complete."
+  retention_moyenne: "40.2% en moyenne simple sur 8 Shorts avec Analytics (23.3 a 67.6%) ; exclus : OpenAI 'erreur de signe' (155.4% = boucles/replays, outlier, 28 vues Analytics) et Character.AI (1 vue). Semaine precedente : 43.0%. Non comparable strictement (n=8, volumes de 11 a 86 vues)."
+  ctr_moyen: "NON DISPONIBLE - restriction API (impressions/CTR inaccessibles). Aucune decision de packaging n'est fondee sur le CTR."
+  cpm_moyen: "NON DISPONIBLE - chaine non monetisee (71/1000 abonnes, 7.1% ; 79.9h/4000h, 2.00% ; Fonds Shorts 17 274/10 000 000, 0.17%)."
+  abonnes: "+3 / -1 (net +2) ; total 71 (62 au 05/10). 2 des 3 gagnes attribues a ZENA7xiDtFQ (Alibaba) et TR8hnU-j7UM (Google Foresight) - 2 videos sur 18 convertissent."
+  commentaires_note: "0 commentaire, 10 likes sur la semaine. Aucun verbatim spectateur : aucune demande recurrente identifiable. Ne pas inventer de demande d'audience."
+
+# === TOP / FLOP DE LA SEMAINE ===
+classement_contenu:
+  meilleurs:
+    - "Google Trouve Enfin Le Bon Jeu Pour Toi (`G510CjrlUPQ`) : 104 vues publiques, 4 likes - meilleur volume, retention inconnue (Analytics non consolide)."
+    - "Google Lance Deep Review, 9 Erreurs Sur 10 Reperees (`GNjWp0NpfEM`) : 92 vues, 4 likes, retention inconnue."
+    - "Google Lance Foresight, Tes Reunions Ne Quittent Jamais Ton Mac (`TR8hnU-j7UM`) : 86 vues, 33.1% de retention, 4 likes, 1 abonne attribue - meilleur volume avec Analytics, retention moyenne."
+    - "Microsoft Maia 300 : 40% Plus Rapide Que Nvidia (`C_Hvk736HHs`) : 27 vues, retention 67.6% - meilleure retention a volume > 20 vues (signal indicatif, n=27)."
+    - "Cloture 30j : Cette IA Chinoise A Triple Sa Vitesse Toute Seule (`XsT_PBX1iRI`) : 738 vues, retention 61.2%, 7 abonnes (0.95%, 2x la reference 0.46%), mais 96% fil Shorts et +2 vues en 23 jours (aucun actif de recherche)."
+  moins_bons:
+    - "Meta Muse sur iPad : 22 vues, 23.3% de retention (le plus faible Short de la semaine avec Analytics, n=22)."
+    - "Samsung Rend Ta Maison 30% Plus Rapide (`-ThJv5n1TZ4`) : 37 vues, 33.8%, titre vague (ne dit pas quoi est accelere), sujet domotique sans produit nomme (score ~34/100, indicatif)."
+    - "Videos longues : 6/6 entre 0 et 2 vues (Meta Personal Agent Protocol 2, OpenAI Wikipedia 1, Apple HomeView 0, ChatGPT Pub 0, Meta Muse Spark Open 0, MAI-Base-2 0). Cloture 7j `03kHI5eTQLU` (Microsoft Execution Containers) : 6 vues, retention 7.4% (infrastructure sans benefice utilisateur)."
+    - "Cloture 30j `z4NIud08Mbk` (ChatGPT connecte Dropbox/Box/SharePoint) : 37 vues, 38.2%, effondrement au milieu (liste d'integrations B2B, ~33/100)."
+    - "Doublon : Meta Muse Spark Open publie 2 fois en 48h (`yeLqHbbg7Kc` 16/10 et `h9D3TlUiTk8` 18/10) ; 4 des 18 videos publiques portent sur Meta Muse."
+
+# === POINTS DE VIGILANCE DONNEES ===
+point_vigilance_donnees:
+  - "`uF60ehACm-Y` (OpenAI retire 3 preuves maths) : retention 155.4%/190% = replays, pas une retention exploitable comme reference ; 28 vues Analytics. Signal qualitatif seulement (narration anecdote + retournement sans decrochage, min RRP 0.50) ; exclue de la moyenne de retention."
+  - "`G510CjrlUPQ` et `GNjWp0NpfEM` : retention 'n/d' au rapport (Analytics non consolides, latence J-2). Ne pas conclure sur l'effet 'chiffre' dans le titre avant le checkpoint 7j (~24/10)."
+  - "Les 6 videos publiees 16-17/10 n'ont pas d'Analytics consolide ; les 3 videos du 18/10 sont exclues (<28h)."
+
+# === BLOCAGES OPERATIONNELS (hors perimetre editorial, escalade Theo) ===
+blocage_operationnel_prioritaire:
+  titre: "Video longue hors creneau doctrinal 18:00 GMT : 6/6 cette semaine, 0-2 vues, 7e escalade consecutive"
+  diagnostic: "Le rapport officiel confirme 6 longues publiees entre 08:00 et 09:00 UTC (creneau doctrinal : 18:00 GMT), 3 vues cumulees au total, contre 20-104 vues pour les Shorts de tete. Le trigger de production reste a 02:06 UTC dans PRODUCTION-CONFIG.yaml ; l'ecart declenchement/publication n'est toujours pas diagnostique."
+  limite_du_diagnostic: "Cause du faible volume NON isolee : horaire hors creneau, absence d'autorite de chaine / de flux pour le long, et sujets de niche (Execution Containers 6 vues, retention 7.4%) sont des hypotheses concurrentes. Les suivis ne permettent pas de conclure que le contenu long est mauvais."
+  action_requise: "(1) Theo : diagnostiquer l'ecart 02:06 UTC / publication 08:00-09:00 UTC. (2) Theo : trancher le ratio d'effort long/short et valider le test operationnel de tests_a_mener (long reserve aux sujets a intention de recherche forte). Ces directives NE modifient PAS la cadence et n'abaissent aucun seuil qualite."
+  blocage_secondaire:
+    titre: "Anti-doublon : 5e cas en 4 semaines (Meta Muse Spark Open, 16/10 et 18/10)"
+    action_requise: "Avant de figer un sujet, verifier BASE-DE-CONNAISSANCES.md ET les titres publies sur les 3 derniers jours (videos_prod/ et videos_prod_longue/), regle 'meme produit, pas seulement meme titre'. Plafond : max 1 video sur un meme produit/famille de produit par fenetre de 7 jours, hors angle de suite a fort potentiel de recherche valide explicitement."
+  gouvernance_seuil:
+    note: "Le prompt de la routine cite des seuils qualite 90/100 et SEO 85/100 ; PRODUCTION-CONFIG.yaml applique le score global unifie >=80/100 (repli 75/100) depuis la decision de Theo du 11/08/2026. Ces directives n'abaissent AUCUN seuil, quel que soit le referentiel. A clarifier par Theo pour aligner le prompt de la routine."
+
+# === CE QUI MARCHE ===
+continuer:
+  - "Gabarit 'marque majeure + chiffre/comparatif nomme' pour le volume : les 3 Shorts Google (104/92/86 vues) et Maia 300 vs Nvidia (67.6% de retention) ; Sakana vs GPT-6 Astra (422 vues a 30j). Reste le gabarit de reference. Limite : retention 33-45% et conversion souvent nulle ; le volume du jour (distribution Shorts) pese autant que le gabarit (G510 sans chiffre = 104 vues)."
+  - "Hook 'chiffre + paradoxe' (XsT_PBX1iRI : 738 vues, 61.2%, 0.95% de conversion). Conserver le hook, mais voir tests_a_mener : il faut y ajouter un nom d'acteur pour creer un actif de recherche."
+  - "Titre 'produit/marque + benefice personnel concret' qui capte la recherche : ElevenLabs 'Clone Ta Voix En 10 Secondes, Gratuitement' (`aGxKi3WPhiM`, 85 vues dont 90.6% recherche, retention 44.7%) ; Windows 11 'Isole Enfin Tes Agents IA Depuis Le 7 Octobre' (84% recherche, 56.3%) ; Firefox IA francaise (31% recherche a 30j). A garder comme role 'actif de recherche' : mot-cle recherche en tete du titre."
+  - "Narration anecdote + retournement avec acteur nomme (`uF60ehACm-Y`, aucune chute precoce) : structure a reutiliser sur un sujet a gabarit plus fort."
+  - "Shorts 48-55s : duree inchangee (les meilleurs volumes de la semaine sont 47-52s)."
+  - "Titre commencant par la marque ou le produit (regle du 29/08) : aucun contre-exemple."
+
+# === CE QUI NE MARCHE PAS ===
+arreter:
+  - "Listes d'integrations / fonctionnalites B2B sans bénéfice personnel (ChatGPT x Dropbox/Box/SharePoint : 38.2%, RRP 0.065 au milieu, 33/100) : ne plus produire ; si traite, ouvrir par le benefice concret ('ChatGPT lit tes fichiers Dropbox') avec un cas d'usage."
+  - "Sujets domotique/wearable sans produit nomme ni benefice precis (Samsung 'Rend Ta Maison 30% Plus Rapide' : 33.8%, titre qui ne dit pas ce qui est accelere ; meme famille que `8_8IbPF8O48`, `jxkF5S3kSa4`). Nommer le produit et l'effet, sinon ecarter."
+  - "Longue sur infrastructure/technique sans consequence utilisateur ouverte en premier (`03kHI5eTQLU` : 7.4%, 34s sur 470s). Ouvrir par la consequence concrete avant le nom technique."
+  - "Doubler un sujet a faible demande en Short + long (Windows 11 Execution Containers : Short 32 vues, long 6 vues) : un seul format par sujet de niche, choisi selon l'intention de recherche."
+  - "Doublons de produit sur 7 jours (Meta Muse : 4/18 videos, Spark Open x2) : arreter (voir blocage_secondaire)."
+  - "Titres verbeux ou a deux segments (Mistral Large 4 : 68 car., 47 vues ; 'Retire 3 Preuves Maths' : 38 vues malgre une retention record) : viser un titre court 'Acteur + verbe + objet + chiffre'."
+  - "Conclusions de retention/gabarit sur moins de ~20 vues ou sans Analytics (Character.AI 1 vue, Meta Muse iPad 22 vues, G510/GNjWp0 sans retention) : signaux non fiables, ne pas modifier une regle dessus."
+  - "Attendre sans changement la distribution des longues (6/6 sous 3 vues) : pas de levier editorial a deployer sur le long tant que le blocage operationnel n'est pas diagnostique."
+
+# === PARAMETRES PRODUCTION ===
+angles_privilegier:
+  - "Marque IA majeure (Google, Microsoft, OpenAI, Apple) + chiffre ou comparatif contre un concurrent nomme dans le titre (Google Foresight/Deep Review, Maia 300 vs Nvidia, Sakana vs GPT-6 Astra) - gabarit volume, 4+ cas."
+  - "Hook 'chiffre + paradoxe' avec nom d'acteur ou de modele nomme EN TETE du titre (XsT_PBX1iRI sans nom d'acteur = 96% fil Shorts, +2 vues en 23 jours ; a corriger pour creer un actif de recherche)."
+  - "Benefice personnel concret + mot-cle recherche stable (cloner sa voix gratuitement, IA qui reste en local sur ton Mac, 'enfin') : role actif de recherche, a produire en priorite en Short court."
+  - "Marque + angle francais/europeen a intention de recherche (Firefox IA francaise 31% de recherche) : maintenu pour la niche, avec CTA explicite."
+  - "Securite/erreur d'IA avec acteur nomme et retournement (OpenAI erreur de signe, rétention qualitative forte) : veille SOP01, ne pas promouvoir sans volume."
+
+angles_eviter:
+  - "Listes d'integrations ou fonctionnalites B2B sans benefice personnel."
+  - "Domotique/wearable sans produit nomme ni benefice precis."
+  - "Infrastructure/securite technique en format long sans consequence utilisateur en ouverture."
+  - "Meme produit publie 2 fois en 7 jours (Meta Muse) ; plus de 2 videos sur la meme marque-produit par semaine."
+  - "Benchmark/precision ouvert sur le chiffre sans effet concret ni referentiel immediat (regle du 20/08)."
+  - "Crypto/blockchain."
+  - "Memes/viral culture."
+  - "Actualite institutionnelle/business sans cadrage IA explicite dans le titre (Character.AI/Disney : 1 vue, NO_LINK_OTHER, ne pas generaliser sur n=1)."
+  - "Videos longues publiees hors creneau : blocage operationnel, pas un signal editorial."
+
+duree_cible: "Shorts 48-55s (meilleurs volumes de la semaine : 47-52s ; Maia 300 55s a 67.6%). Video longue : 7-9 min, inchange, aucun signal de contenu exploitable (0-2 vues)."
+
+hook_strategy: "(1) Marque IA majeure nommee des la 1ere phrase + chiffre ou concurrent nomme. (2) Dans les scripts a gabarit comparatif/paradoxe (Sakana, XsT_PBX1iRI), repondre au paradoxe du titre AVANT la 8e seconde (rétention relative 0.2-0.25 entre 10% et 20% de la video). (3) Benchmark/prix/precision : effet concret pour le spectateur avant le chiffre, puis chiffre avec son referentiel. (4) Pas de chiffre-choc sans referentiel. Rappel exactitude : un hook ne promet jamais plus que ce que le sujet etablit (CONTEXTE-GLOBAL §8) ; volume eleve avec retention faible signale une promesse exageree (GUIDE-ANALYSE §4)."
+
+retention_target: "Shorts : 45% (moyenne simple 40.2% cette semaine sur 8 Shorts, 43.0% la precedente ; references : Maia 300 67.6%, XsT_PBX1iRI 61.2% a 30j, Windows 11 Isole 56.3%). Video longue : aucune cible chiffree fiable tant que la distribution n'est pas diagnostiquee."
+
+affiliation_priority:
+  - "AI tools freemium (ElevenLabs clone de voix gratuit a 85 vues dont 90.6% recherche : intention d'usage directe)"
+  - "tech books & courses"
+
+cpm_target: "1.8"
+cpm_note: "Aucune donnee CPM (chaine non monetisee, 71/1000 abonnes). Cible indicative non confirmee."
+
+# === TESTS A MENER CETTE SEMAINE ===
+tests_a_mener:
+  - "Hypothese (reconduit du 28/09 et 05/10, toujours NON evalue : aucun suivi ne consigne 'CTA lie : oui/non') : un CTA d'abonnement lie a la promesse du sujet, place dans le dernier tiers du Short, ameliore la conversion. Objectif : depasser la reference 0.46% (Sakana 0.71%, XsT 0.95% avec CTA absent/generique ; 0 abonne sur ElevenLabs, Mistral, Firefox). Mesure de reussite : sur 5 Shorts avec CTA lie et Analytics a 7j, au moins 2/5 a >0.46% de conversion. Obligation : le suivi consigne 'CTA lie : oui/non' et le nombre d'abonnes."
+  - "Hypothese : ajouter un nom d'acteur/modele en tete d'un titre 'chiffre + paradoxe' cree un actif de recherche sans perdre le fil Shorts (XsT_PBX1iRI : 2.4% de recherche a 30j, sans nom d'acteur). Objectif : part de recherche >=10% a 30j en gardant >=100 vues a 7j. Mesure de reussite : 2 Shorts de ce type avec acteur nomme ; reussite si au moins 1/2 atteint >=100 vues a 7j ET >=10% de trafic recherche a 7j."
+  - "Hypothese : repondre au paradoxe du titre avant la 8e seconde corrige l'erosion 10%-20% (Sakana : RRP 0.23-0.25). Objectif : retention des Shorts comparatifs. Mesure de reussite : sur 2 Shorts comparatifs, retention >=50% sur au moins 1/2 avec >=50 vues Analytics a 7j."
+  - "Hypothese : le titre court 'Acteur + Lance + objet + chiffre' (sans deux segments) augmente la distribution Shorts par rapport au titre structure 'modele : chiffre, lieu' (Mistral Large 4 : 47 vues). Objectif : tester la variante courte 'Mistral Lance Une IA A 1000 Milliards De Parametres' sur le prochain sujet comparable (sans republier le meme produit dans la fenetre de 7 jours). Mesure de reussite : >=100 vues a 7j (mediane Shorts ~110) avec retention >=45%."
+  - "Hypothese : une question finale en dernier plan (en plus du CTA) fait sortir l'engagement du 0 (ElevenLabs 1 like/85 vues, Mistral 0 like/47, OpenAI erreur de signe 0 like malgre 190% de retention). Objectif : engagement. Mesure de reussite : sur 5 Shorts avec question finale, taux de likes >=2% en moyenne a 7j ou au moins 1 commentaire sur la serie."
+  - "Hypothese operationnelle (hors qualite editoriale, decision Theo ; reconduit, non lance) : pour 1 sujet a forte intention de recherche, ne publier qu'en Short et comparer au meme sujet en long a 7j, pour separer 'format long sans autorite' de 'sujet sans demande'. Mesure : Short >=100 vues et long <10 vues => la contrainte est le format/distribution. A ne lancer qu'avec validation de Theo (ne modifie pas la cadence)."
+
+# === NOTES ===
+notes: |
+  RESUME FACTUEL (12/10-18/10/2026, rapport officiel + suivi 15/10 et 18/10 + BASE-DE-CONNAISSANCES) :
+  21 videos uploadees (12 Shorts, 6 longues publiques, 3 privees <28h). 480 vues Analytics (-38% vs
+  773, non iso-recul : 6/18 videos sans Analytics consolide), 142 min, 10 likes, 0 commentaire.
+  Retention Shorts 40.2% (8 videos, hors outlier 155.4% et n=1). Abonnes 71 (+3/-1), 7.1% du seuil
+  YPP ; Fonds Shorts 0.17%. CTR et CPM indisponibles.
+
+  CE QUI SE CONFIRME : le gabarit 'marque majeure + chiffre/comparatif nomme' garde le meilleur
+  volume (Google 104/92/86 vues) ; Maia 300 vs Nvidia donne la meilleure retention a volume (67.6%,
+  n=27) ; les titres 'produit + benefice personnel' construisent un petit actif de recherche
+  (ElevenLabs 90.6%, Windows 11 84%, Firefox 31%). Cloture 30j : les Shorts 'chiffre + paradoxe'
+  (XsT_PBX1iRI 738 vues, 61.2%, 0.95% conv.) vivent 7 jours puis s'eteignent sans nom d'acteur.
+  LIMITES : volumes faibles (la moitie des Shorts < 40 vues), conversion abonnes sur 2 videos
+  seulement, engagement quasi nul, aucun verbatim spectateur.
+  PROBLEMES OPERATIONNELS (hors perimetre de ces directives) : 6/6 longues hors creneau a 0-2 vues
+  (7e escalade) ; 5e doublon en 4 semaines (Meta Muse Spark Open) ; semaine du 12/10 sans fichier
+  directives (lacune de la routine) ; ecart de seuils qualite entre le prompt de routine (90/85) et
+  PRODUCTION-CONFIG.yaml (80/75, decision Theo 11/08) a clarifier. Aucun secret expose dans ce fichier.
+  Gouvernance : aucun seuil abaisse. Hierarchie respectee : exactitude > valeur spectateur >
+  qualite editoriale > clarte > performance YouTube > rapidite (CONTEXTE-GLOBAL §12). Les
+  directives n'affinent que le ciblage (angles, duree, hook, affiliation).
+
+metadata:
+  version: "8.0"
+  generated_at: "2026-10-19T09:00:00Z"
+  generated_by: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
+  algorithm: "rapport-2026-10-12.pdf (semaine 12/10-18/10) + suivi/2026-10-15_*.md + suivi/2026-10-18_*.md + BASE-DE-CONNAISSANCES.md + PRODUCTION-CONFIG.yaml"
+  manual_override: false
+  next_update: "2026-10-26"
