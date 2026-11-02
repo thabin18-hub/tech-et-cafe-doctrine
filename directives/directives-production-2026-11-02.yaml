@@ -1,0 +1,56 @@
+# Directives Production - Semaine du 02/11/2026
+# Generees lundi 02/11 9h GMT (SOP 11 - Reunion strategique hebdomadaire)
+#
+# DONNEES INSUFFISANTES, CONSERVE LE FRAMEWORK PAR DEFAUT DE PRODUCTION-CONFIG.yaml.
+#
+# Motif (regle SOP 11 : <3 videos analysees ou <24h de recul) :
+#  - rapports/rapport-2026-10-26 (semaine 26/10-01/11) : panne OAuth Google (disabled_client),
+#    AUCUNE statistique YouTube recuperee ; 3 videos connues (26/10) sans vues ni retention.
+#  - suivi/ : dernier checkpoint 2026-10-18 ; aucun suivi pour la semaine analysee.
+#  - Aucun commit de production du 26/10 03h UTC au 01/11 23h59 UTC.
+#  - Dernier chiffre connu d'abonnes (rapport 19-25/10) : 75 abonnes, 82,1h/4000h, obsolete.
+# Aucun chiffre n'est estime ou invente. Les directives du 19/10 (version 8.0) restent la
+# reference de ciblage ; aucune nouvelle regle n'est creee sans donnees.
+
+semaine_du: "2026-11-02"
+donnees_suffisantes: false
+
+angles_privilegier:
+  - "Inchange (framework par defaut, directives du 19/10) : marque IA majeure + chiffre ou comparatif nomme en tete du titre ; benefice personnel concret + mot-cle de recherche ; securite/erreur d'IA avec acteur nomme."
+angles_eviter:
+  - "Inchange (framework par defaut) : listes d'integrations B2B, domotique/wearable sans produit nomme, doublon de produit sur 7 jours, crypto, memes."
+duree_cible: "Inchange : Shorts 48-55s ; longue 7-9 min."
+hook_strategy: "Inchange : marque + chiffre/concurrent nomme des la 1ere phrase ; repondre au paradoxe du titre avant la 8e seconde ; jamais de promesse superieure a ce que le sujet etablit."
+retention_target: "Inchange : Shorts 45% (reference 40.2% sem. 12-18/10, derniere mesure fiable). Aucune nouvelle mesure."
+affiliation_priority:
+  - "Inchange : AI tools freemium ; tech books & courses."
+cpm_target: "1.8 (indicatif, chaine non monetisee, aucune donnee CPM)"
+
+tests_a_mener:
+  - "Les 6 tests du 19/10 restent ouverts et NON evalues (CTA lie, acteur nomme sur titre chiffre+paradoxe, reponse au paradoxe avant 8s, titre court Acteur+Lance+objet+chiffre, question finale, test Short seul vs long). Aucune nouvelle hypothese : sans donnees on ne peut ni valider ni invalider. Reprendre l'evaluation des que les Analytics sont disponibles (suivi 'CTA lie : oui/non' obligatoire)."
+arreter:
+  - "Aucun arret nouveau decide (aucune donnee). Les arrets du 19/10 restent en vigueur."
+continuer:
+  - "Tout ce qui figure dans directives-production-2026-10-19.yaml : aucune donnee ne le contredit."
+
+blocage_operationnel_prioritaire:
+  titre: "Panne OAuth Google + arret de production depuis le 26/10 (hors perimetre editorial, escalade Theo)"
+  actions_requises:
+    - "Reactiver/recreer le client OAuth Google Cloud (GOOGLE_CLIENT_ID desactive) ; auditer la cause (rotation, app en mode test expiree, projet suspendu)."
+    - "Verifier dans YouTube Studio les videos publiees du 27/10 au 01/11 et le backlog de 17 videos privees."
+    - "Relancer le rapport analytique pour combler 26/10-01/11 une fois l'acces retabli ; ne pas relancer en boucle avant correction."
+  gouvernance_seuil: "Aucun seuil abaisse. Ecart de seuils prompt routine (90/85) vs PRODUCTION-CONFIG.yaml (80/75, decision Theo 11/08) toujours a clarifier."
+
+notes: |
+  RESUME FACTUEL (26/10-01/11/2026) : panne d'authentification Google (client OAuth desactive) ->
+  0 statistique YouTube. 3 videos connues le 26/10 (Ask YouTube long 7,63 min ; OpenCode Short
+  55,7s ; Mistral Voxtral 3 Short 50,0s), 0 trace du 27/10 au 01/11, 0 commit en 6 jours contre
+  23 videos la semaine precedente. 2e semaine consecutive sans statistiques fiables. Donnees
+  insuffisantes : conserver le framework par defaut. Hierarchie respectee (exactitude > valeur
+  spectateur > qualite editoriale > clarte > performance > rapidite) ; aucun seuil abaisse.
+  Aucun secret expose.
+
+metadata:
+  version: "9.0"
+  generated_at: "2026-11-02T09:15:00Z"
+  generated_by: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
