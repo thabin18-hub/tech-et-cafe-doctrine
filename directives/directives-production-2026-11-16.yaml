@@ -1,0 +1,73 @@
+# Directives Production - Semaine du 16/11/2026
+# Generees lundi 16/11 9h GMT (SOP 11 - Reunion strategique hebdomadaire)
+#
+# DONNEES INSUFFISANTES, CONSERVE LE FRAMEWORK PAR DEFAUT DE PRODUCTION-CONFIG.yaml.
+#
+# Motif (regle SOP 11 : <3 videos analysees ou <24h de recul) :
+#  - rapports/rapport-2026-11-09 (semaine 09/11-15/11) : client OAuth Google desactive
+#    (401 disabled_client, reconfirme le 16/11), AUCUNE statistique YouTube ; YOUTUBE_API_KEY vide,
+#    aucun repli en lecture publique. 0 video publiee.
+#  - suivi/2026-11-10 a 2026-11-15 : 6 runs quotidiens consecutifs "checkpoints bloques",
+#    0 mesure ; backlog de 18 checkpoints 30j (videos du 12/10 au 17/10).
+#  - BASE-DE-CONNAISSANCES.md : aucun enseignement de performance ajoute depuis le 19/10.
+#  - Aucune production consignee depuis le 26/10 (dernier upload : vOyjauSfD3I).
+# Aucun chiffre n'est estime ou invente. Les directives du 19/10 (version 8.0), synchronisees
+# dans PRODUCTION-CONFIG.yaml > directives.default, restent la reference de ciblage.
+# Note : aucune directive n'a ete generee pour la semaine du 09/11 (absente de l'historique git) ;
+# ce fichier prend la suite de directives-production-2026-11-02.yaml.
+
+semaine_du: "2026-11-16"
+donnees_suffisantes: false
+
+angles_privilegier:
+  - "Inchange (framework par defaut, directives du 19/10) : marque IA majeure + chiffre ou comparatif nomme en tete du titre ; benefice personnel concret + mot-cle de recherche ; securite/erreur d'IA avec acteur nomme et retournement."
+angles_eviter:
+  - "Inchange (framework par defaut) : listes d'integrations B2B sans benefice personnel, domotique/wearable sans produit nomme, doublon de produit sur 7 jours, crypto, memes, actualite business sans cadrage IA dans le titre."
+  - "Ajout factuel (exactitude) : a la reprise, ne pas publier d'actualite datee de la periode d'arret (26/10-reprise) comme si elle etait du jour. Verifier la date de l'annonce et formuler au passe si elle a plus de 72h (CONTEXTE-GLOBAL : exactitude avant rapidite)."
+duree_cible: "Inchange : Shorts 48-55s ; longue 7-9 min."
+hook_strategy: "Inchange : marque + chiffre/concurrent nomme des la 1ere phrase ; repondre au paradoxe du titre avant la 8e seconde ; effet concret avant le chiffre ; jamais de promesse superieure a ce que le sujet etablit."
+retention_target: "Inchange : Shorts 45% (reference 40.2% sem. 12-18/10, derniere mesure fiable). Video longue : aucune cible chiffree. Aucune nouvelle mesure depuis le 19/10."
+affiliation_priority:
+  - "Inchange : AI tools freemium ; tech books & courses."
+cpm_target: "1.8 (indicatif, chaine non monetisee, aucune donnee CPM)"
+
+tests_a_mener:
+  - "Les 6 tests du 19/10 restent ouverts et NON evalues (CTA lie, acteur nomme sur titre chiffre+paradoxe, reponse au paradoxe avant 8s, titre court Acteur+Lance+objet+chiffre, question finale, Short seul vs long). Aucune nouvelle hypothese : sans donnees on ne peut ni valider ni invalider."
+  - "Pre-requis de mesure (pas un test editorial) : des retablissement de l'OAuth, traiter le backlog 30j (18 videos du 12/10 au 17/10) via requetes Analytics historiques AVANT toute nouvelle regle. Reussite : 18/18 checkpoints 30j consignes dans suivi/ avec 'CTA lie : oui/non', puis evaluation des tests du 19/10 la semaine suivante."
+arreter:
+  - "Aucun arret nouveau decide (aucune donnee). Les arrets du 19/10 restent en vigueur."
+  - "Relancer en boucle les appels OAuth/Analytics avant correction humaine du client : 6 runs quotidiens + 3 rapports hebdo ont reconfirme la meme erreur sans information nouvelle. Une seule verification par run suffit."
+continuer:
+  - "Tout ce qui figure dans directives-production-2026-10-19.yaml (= PRODUCTION-CONFIG.yaml > directives.default) : aucune donnee ne le contredit."
+  - "Discipline 'aucun chiffre invente' des rapports et suivis (cellules N/A, backlog documente) : respecte la hierarchie exactitude > performance."
+
+blocage_operationnel_prioritaire:
+  titre: "Panne OAuth Google (~21 jours, depuis ~26/10) + arret total de production - hors perimetre editorial, escalade Theo"
+  actions_requises:
+    - "Reactiver ou recreer le client OAuth Google Cloud associe a GOOGLE_CLIENT_ID (401 disabled_client). S'il est recree : reemettre YOUTUBE_REFRESH_TOKEN et YOUTUBE_ANALYTICS_REFRESH_TOKEN. Le meme client bloque l'upload ET les Analytics."
+    - "Renseigner YOUTUBE_API_KEY (actuellement vide) pour un repli en lecture publique."
+    - "Verifier dans YouTube Studio le statut des videos consignees 'private' a l'upload (12/10-26/10) : si jamais passees en public, les checkpoints 30j seront quasi nuls et ne doivent pas etre interpretes comme un signal editorial."
+    - "Fenetre d'objectif 1000 abonnes / 4000h (02/08 -> ~31/10) echue sans mesure de cloture : redefinir l'objectif apres rattrapage des donnees, pas avant."
+  gouvernance_seuil: "Aucun seuil abaisse. Ecart de seuils prompt routine (90/85) vs PRODUCTION-CONFIG.yaml criteres_qualite (80/75, decision Theo 11/08) toujours a clarifier ; en attendant, appliquer le plus strict (90 qualite / 85 SEO) comme l'exige le prompt SOP 11."
+
+notes: |
+  RESUME FACTUEL (09/11-15/11/2026) : client OAuth Google toujours desactive (401 disabled_client,
+  reconfirme le 16/11) -> 0 statistique YouTube, YOUTUBE_API_KEY vide (aucun repli). 0 video publiee,
+  aucune production depuis le 26/10 (21 jours). 6 suivis quotidiens bloques (10-15/11), backlog de
+  18 checkpoints 30j + checkpoints 24h/48h/7j des videos du 17/10 au 26/10 (recuperables via requetes
+  Analytics historiques). 4e semaine consecutive sans statistiques fiables ; dernier chiffre connu :
+  75 abonnes, 82,1h/4000h (semaine 19-25/10, obsolete). Audience : aucun commentaire/like/abonne
+  mesurable. CTR/retention moyens : indisponibles. Donnees insuffisantes : framework par defaut conserve.
+  Hierarchie respectee (exactitude > valeur spectateur > qualite editoriale > clarte > performance >
+  rapidite) ; aucun seuil abaisse. Aucun secret expose.
+
+metadata:
+  version: "10.0"
+  generated_at: "2026-11-16T09:20:00Z"
+  generated_by: "Claude (Directeur de Production IA) - routine SOP 11 automatisee"
+  sources:
+    - "rapports/rapport-2026-11-09.pdf"
+    - "rapports/rapport-2026-11-02.pdf"
+    - "suivi/2026-11-10_checkpoints-bloques.md -> suivi/2026-11-15_checkpoints-bloques.md"
+    - "BASE-DE-CONNAISSANCES.md (entrees 12/11-16/11)"
+    - "directives/directives-production-2026-11-02.yaml"
